@@ -137,10 +137,10 @@
                         Meus agradecimentos e parabéns aos tradutores/revisores: 
               <a href="http://www.dtsato.com/">Danilo Sato</a>,
               <a href="http://presto.stellar.com.br/">Davi Vidal</a>, 
-              <a href="http://www.cloudflare.com/email-protection#3351525441565b5073545e525a5f1d505c5e">Reginaldo Russinholi</a>, 
+              <a href="http://www.cloudflare.com/email-protection#4624272134232e2506212b272f2a6825292b">Reginaldo Russinholi</a>, 
               <a href="http://www.oliverbarnes.com/">Oliver Azevedo Barnes</a>, 
               <a href="https://github.com/dodecaphonic">Vitor Peres</a>, 
-              <a href="http://www.cloudflare.com/email-protection#b8c8ded4d9cad1d6d1f8dfd5d9d1d496dbd7d5">Paulo Fernando Larini</a>, 
+              <a href="http://www.cloudflare.com/email-protection#94e4f2f8f5e6fdfafdd4f3f9f5fdf8baf7fbf9">Paulo Fernando Larini</a>, 
               Massimiliano Giroldi, 
               <a href="http://blog.shadowmaru.org/">Ricardo Yasuda</a>, 
               <a href="http://makemesimple.com/blog/">Lucas Húngaro</a>, 
@@ -359,9 +359,9 @@
         <p>
                         Se você notar qualquer erro ou falha de digitação, se tiver
               qualquer comentário ou sugestão, ou um bom exercício que eu possa
-              incluir, por favor <a href="http://www.cloudflare.com/email-protection#99faf1ebf0ead9e9f0f7fcb7fff4">me avise</a> (se você falar
+              incluir, por favor <a href="http://www.cloudflare.com/email-protection#5a39322833291a2a33343f743c37">me avise</a> (se você falar
               inglês) ou, se preferir falar em português,
-              <a href="http://www.cloudflare.com/email-protection#8fe5fae3e6e0cfe2e0e1fbeae6fde0a1eafbe6a1edfd">avise o Júlio Monteiro</a>.
+              <a href="http://www.cloudflare.com/email-protection#4a203f2623250a2725243e2f233825642f3e23642838">avise o Júlio Monteiro</a>.
 
         </p>
         <div class="fleur"><div class="fleur_stem">&nbsp;</div></div>
