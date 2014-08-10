@@ -166,23 +166,23 @@ $(document).ready(function() {
 
 </ul>
 
-    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/iluminare-eletrica_21-03-2014.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
+    <li><div style='border: thin solid #999'><a href='http://www.antaresviagens.com.br/' target='_blank'><img src='/portal/noticias/banners/antares1.jpg' width='311' height='153' /></a></div></li>    <ul id="lateral">
 
 </ul>
 
-    <li><div style='border: thin solid #999'><a href='' target='_blank'><img src='/portal/noticias/banners/drdaniela.jpg' width='311' height='153' /></a></div></li>    <ul id="lateral">
+    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/inusitta_noticias_20-03-2014.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
 
 </ul>
 
-    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/ladonna.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
+    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/love_story_noticias.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
 
 </ul>
 
-    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/odonto_freitas_26-06-2014.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
+    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/emporio_catalao_16-05-2014.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
 
 </ul>
 
-    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/ideal_tintas-10-03-2014.swf', '311', '153', 'opaque')</script></div></li>			</ul>
+    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/cantinho_da_crianca_3.swf', '311', '153', 'opaque')</script></div></li>			</ul>
 			<ul id="lateral">
 				<li>
 					<div id="vcreporter">
@@ -203,15 +203,15 @@ $(document).ready(function() {
 
 </ul>
 
-    <li><div style='border: thin solid #999'><a href='http://www.antaresviagens.com.br/' target='_blank'><img src='/portal/noticias/banners/antares1.jpg' width='311' height='153' /></a></div></li>    <ul id="lateral">
-
-</ul>
-
     <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/recreionoticias.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
 
 </ul>
 
-    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/cantinho_da_crianca_3.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
+    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/studio-07-2014.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
+
+</ul>
+
+    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/dispachante_minas_gerais.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
 
     <li>
 <div style="margin-bottom: 15px; border: thin solid #999;">
@@ -235,19 +235,15 @@ $(document).ready(function() {
     </li>
 </ul>
 
-    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/emporio_catalao_16-05-2014.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
+    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/peixaria_29-05-2014.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
 
 </ul>
 
-    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/inusitta_noticias_20-03-2014.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
+    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/iluminare-eletrica_21-03-2014.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
 
 </ul>
 
-    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/microtec.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
-
-</ul>
-
-    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/studio-07-2014.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
+    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/ideal_tintas-10-03-2014.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
 
 </ul>
 
@@ -255,15 +251,19 @@ $(document).ready(function() {
 
 </ul>
 
-    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/love_story_noticias.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
+    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/odonto_freitas_26-06-2014.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
 
 </ul>
 
-    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/peixaria_29-05-2014.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
+    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/ladonna.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
 
 </ul>
 
-    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/dispachante_minas_gerais.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
+    <li><div style='border: thin solid #999'><a href='' target='_blank'><img src='/portal/noticias/banners/drdaniela.jpg' width='311' height='153' /></a></div></li>    <ul id="lateral">
+
+</ul>
+
+    <li><div style='border: thin solid #999; background:url(/portal/noticias/banners/)';><script>exibeFash('/portal/noticias/banners/microtec.swf', '311', '153', 'opaque')</script></div></li>    <ul id="lateral">
 
 </ul>
 
