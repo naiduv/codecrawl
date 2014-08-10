@@ -2,7 +2,7 @@
 require 'net/http'
 
 links = []
-link_limit= 2
+link_limit= 80000
 num_links = 0
 
 uri = URI('http://www.google.com/search?q=require+OR+gem+OR+puts+-git+-bitbucket+-github+-rubygems.org+-metager.de+-html+filetype%3Arb&oq=require+OR+gem+OR+puts+-git+-bitbucket+-github+-rubygems.org+-metager.de+-html+filetype%3Arb&aqs=chrome..69i57.730j0j1&sourceid=chrome&es_sm=93&ie=UTF-8')
