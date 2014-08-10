@@ -45,6 +45,9 @@ while num_links<=link_limit do
 
   links.each do |link|
     code = Net::HTTP.get(URI(link))
+    if code.include? '<html>'
+      next
+    end
     filename = './code' + link.match('\/[^/]*$')[0]
     puts filename
     File.open(filename, 'w') {|f| f.write(code) }
