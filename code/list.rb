@@ -6,7 +6,7 @@
 <meta name="description" content="Matsukei Open Source Center" />
 <meta name="keywords" content="Ruby,帳票,OSS,Rails,マツケイ" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="d+VpvpA6bohLkdLSkM1OIzH2tvNb7BR66IjixZZHyD4=" name="csrf-token" />
+<meta content="L3PrvjVFlL/PbkMHKslqP4lKmj6P04GxS/8jo/vwlZ0=" name="csrf-token" />
 <link rel='shortcut icon' href='/favicon.ico?1348113956' />
 <link href="/stylesheets/jquery/jquery-ui-1.9.2.css?1372407541" media="all" rel="stylesheet" type="text/css" />
 <link href="/themes/mosc/stylesheets/application.css?1375373810" media="all" rel="stylesheet" type="text/css" />
