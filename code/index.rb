@@ -1,379 +1,433 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-<html lang="pt_br">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link type="text/css" href="/stylesheets/pine.css" media="screen" rel="Stylesheet" />
-    <link type="text/css" href="/stylesheets/tutorial.css" media="screen, print" rel="Stylesheet" />
-    <link type="text/css" href="/stylesheets/print.css" media="print" rel="Stylesheet" />
-    <title>
-      Aprenda a Programar, por Chris Pine
-    </title>
-    <script type="text/javascript" src="http://www.gvisit.com/record.php?sid=6941c11eba5c874197e2096f9c854106" language="JavaScript">
-    </script>
-  </head>
-  <body>
-    <div id="pageWidth">
-      <div id="headerBar">
-        <div id="titlePicContainer">
-          <a href="/">
-          <img src="images/titleLTP_pt_br.gif" alt="Aprenda a Programar" width="500" id="titlePic" height="108" />
-          </a>
-        </div>
-        <a href="/">
-          <img id="locket" width="82" height="82" alt="apenas uma figura bonitinha"
-            src="images/locketLTP.png" />
-        </a>
-      </div>
-      <div id="menuPane">
-        <img src="images/spearup_sm.gif" width="35" id="menuSpearTop" height="38" />
-        <p class="funnyMenuText fancyMenuText" style="font-size: 12px; font-family: times, serif;">
-          a versÃ£o
-        </p>
-        <p class="funnyMenuText fancyMenuText" style="font-size: 12px; font-family: times, serif;">
-          <em>melhorada</em>
-        </p>
-        <p class="funnyMenuText fancyMenuText" style="font-size: 12px; font-family: times, serif; letter-spacing: 6px; font-variant: small-caps;">
-          estendida
-        </p>
-        <a href="http://pragmaticprogrammer.com/titles/fr_ltp">
-        <img src="images/LTP_cover.jpg" width="100" height="120" />
-        </a>
-        <img src="images/swirly.gif" style="padding: 30px;" width="64" height="21" />
-        <p class="funnyMenuText">
-          &laquo; o tutorial original &raquo;
-        </p>
-        <ol style="padding-top: 15px; padding-bottom: 15px;" start="0">
-          <li>
-            <a href="/index.rb?Chapter=00">Iniciando</a>
-          </li>
-          <li>
-            <a href="/index.rb?Chapter=01">NÃºmeros</a>
-          </li>
-          <li>
-            <a href="/index.rb?Chapter=02">Letras</a>
-          </li>
-          <li>
-            <a href="/index.rb?Chapter=03">VariÃ¡veis e AtribuiÃ§Ãµes</a>
-          </li>
-          <li>
-            <a href="/index.rb?Chapter=04">Misturando tudo</a>
-          </li>
-          <li>
-            <a href="/index.rb?Chapter=05">Mais Sobre MÃ©todos</a>
-          </li>
-          <li>
-            <a href="/index.rb?Chapter=06">Controle de Fluxo</a>
-          </li>
-          <li>
-            <a href="/index.rb?Chapter=07">Arrays e Iteradores</a>
-          </li>
-          <li>
-            <a href="/index.rb?Chapter=08">Escrevendo seus PrÃ³prios MÃ©todos</a>
-          </li>
-          <li>
-            <a href="/index.rb?Chapter=09">Classes</a>
-          </li>
-          <li>
-            <a href="/index.rb?Chapter=10">Blocos e Procs</a>
-          </li>
-          <li>
-            <a href="/index.rb?Chapter=11">AlÃ©m deste Tutorial</a>
-          </li>
-        </ol>
-        <p>
-                (<a href="http://pine.fm/LearnToProgram/">VersÃ£o Original</a>
-      por&nbsp;Chris&nbsp;Pine.)
-
-        </p>
-        <p>
-                (<a href="http://www1.tf.chiba-u.jp/~shin/tutorial/">TraduÃ§Ã£o em JaponÃªs</a>
-      por&nbsp;Shin&nbsp;Nishiyama.)
-
-        </p>
-        <p>
-                (<a href="http://www.ruby-doc.org/docs/ApprendreProgrammer/Apprendre_%E0_Programmer.pdf">TraduÃ§Ã£o em FrancÃªs</a>
-      por&nbsp;Jean&#8209;Pierre&nbsp;ANGHEL.)
-
-        </p>
-        <p>
-                (<a href="http://www.shokhirev.com/mikhail/ruby/ltp/title.html">TraduÃ§Ã£o em Russo</a>
-      por&nbsp;Mikhail&nbsp;Shokhirev.)
-
-        </p>
-        <p>
-                (<a href="http://gcarst.googlepages.com/komgodtigang">TraduÃ§Ã£o em DinamarquÃªs</a>
-      por&nbsp;Gunner&nbsp;Carstens.)
-
-        </p>
-        <p>
-                (<a href="http://sites.google.com/site/rubynabosanskom/">TraduÃ§Ã£o em BÃ³snio</a>
-      por&nbsp;Rusmir&nbsp;GadÅ¾o.)
-
-        </p>
-        <img src="images/speardown_sm.gif" width="36" id="menuSpearBottom" height="40" />
-      </div>
-      <div id="contentPane">
-        <h2>
-          Notas sobre a traduÃ§Ã£o em PortuguÃªs Brasileiro
-        </h2>
-        <p>
-                        Todo comunidade de programaÃ§Ã£o Ã© formada pelos amantes de computaÃ§Ã£o, que aprendem linguagens
-              novas no cafÃ©-da-manhÃ£, mas tambÃ©m uma uma grande parcela de pessoas que foram empolgadas por
-              nÃ³s mas acabam esbarrando na barreira inicial do aprendizado. Felizmente autores como Chris
-              Pine resolveram atacar este desafio e o resultado que temos Ã© uma excelente material para 
-              programadores iniciantes em Ruby.
-
-        </p>
-        <p>
-                        Eu, <b>Fabio Akita</b>, <a href="http://www.akitaonrails.com/2008/1/15/vamos-traduzir-o-learn-to-program">surgi</a>
-              com esta sugestÃ£o em Janeiro de 2008. Fiz o anÃºncio no meu blog e na lista rails-br e foi um
-              movimento incrÃ­vei: dezenas de voluntÃ¡rios se candidataram a ajudar. GraÃ§as a isso a traduÃ§Ã£o
-              e revisÃ£o nÃ£o durou uma semana! Fico extremamente satisfeito em ter essa amostra da
-              comunidade se auto-ajudando. Espero ter a oportunidade de conduzir mais trabalhos desta
-              natureza.
-
-        </p>
-        <p>
-                        Meus agradecimentos e parabÃ©ns aos tradutores/revisores: 
-              <a href="http://www.dtsato.com/">Danilo Sato</a>,
-              <a href="http://presto.stellar.com.br/">Davi Vidal</a>, 
-              <a href="http://www.cloudflare.com/email-protection#4624272134232e2506212b272f2a6825292b">Reginaldo Russinholi</a>, 
-              <a href="http://www.oliverbarnes.com/">Oliver Azevedo Barnes</a>, 
-              <a href="https://github.com/dodecaphonic">Vitor Peres</a>, 
-              <a href="http://www.cloudflare.com/email-protection#94e4f2f8f5e6fdfafdd4f3f9f5fdf8baf7fbf9">Paulo Fernando Larini</a>, 
-              Massimiliano Giroldi, 
-              <a href="http://blog.shadowmaru.org/">Ricardo Yasuda</a>, 
-              <a href="http://makemesimple.com/blog/">Lucas HÃºngaro</a>, 
-              Anderson Leite.
-              
-              AgradeÃ§o tambÃ©m a todos que se voluntariaram, mas havia mais colaboradores que capÃ­tulos para
-              traduzir e sobrou gente :-) Acho que Ã© um bom sinal!
-
-        </p>
-        <p>
-                        Agradecimentos tambÃ©m ao <a href="http://monteiro.eti.br/">JÃºlio Santos Monteiro</a> por dar uma "casa" oficial a este trabalho no
-              web site <a href="http://aprendaaprogramar.rubyonrails.pro.br" title="Aprenda a Programar">http://aprendaaprogramar.rubyonrails.pro.br</a>.
-
-        </p>
-        <p>
-                        Esperamos que o resultado deste trabalho seja de grande valia tanto a estudantes quanto
-              a qualquer um que queira ensinar outros a programar.
-
-        </p>
-        <div class="fleur"><div class="fleur_stem">&nbsp;</div></div>
-        <h2>
-          Um lugar para o futuro programador comeÃ§ar
-        </h2>
-        <p>
-                        Eu acho que tudo isso comeÃ§ou em 2002. Eu estava pensando
-              em ensinar programaÃ§Ã£o, e como uma grande linguagem como
-              Ruby seria Ã³tima para aprender a como programar.  Quer dizer, nÃ³s estÃ¡vamos
-              todos excitados com Ruby pelo seu poder, elegÃ¢ncia e por ser realmente divertido,
-              mas me pareceu que ele tambÃ©m seria um excelente guia para aprender a programar.
-
-        </p>
-        <p>
-                        Infelizmente, nÃ£o havia muita documentaÃ§Ã£o sobre Ruby
-              destinada aos iniciantes naquela Ã©poca. Alguns de nÃ³s,
-              na comunidade, estÃ¡vamos falando sobre como um tutorial 
-              "Ruby for the Nuby" era necessÃ¡rio,
-              e, mais genericamente, um tutorial ensinando a programar, como um todo.
-              Quanto mais eu pensava nisso, mais eu tinha a dizer (o que me surpreendeu
-              um pouco). AtÃ© que alguÃ©m finalmente disse: "Chris, porque vocÃª
-              nÃ£o escreve um tutorial ao invÃ©s de ficar falando sobre isso?".
-              EntÃ£o eu o fiz.
-
-        </p>
-        <p>
-                        E isso nÃ£o foi muito bom. Eu tive todas essas boas idÃ©ias que eram boas
-              <em>em teoria</em>, mas a real tarefa de fazer um grande tutorial
-              para nÃ£o-programadores foi muito mais desafiadora
-              do que eu poderia prever. (Quer dizer, pareciam boas para mim, mas eu jÃ¡
-              sabia como programar.)
-
-        </p>
-        <p>
-                        O que me salvou foi que eu fiz com que fosse fÃ¡cil para as pessoas
-              falarem comigo, e eu sempre tentei ajudar as pessoas quando elas empacavam.
-              Quando eu via um monte de gente empacando em uma parte,
-              eu a reescrevia. Isso deu muito trabalho, mas lentamente foi se tornando melhor
-              e melhor.
-
-        </p>
-        <p>
-                        Alguns anos depois, isso estava ficando realmente bom.  :-) TÃ£o bom,
-              na verdade, que eu jÃ¡ estava pronto para anunciar sua finalizaÃ§Ã£o e
-              partir para outra coisa. E justamente nesse instante houve a
-              oportunidade de transformar esse tutorial em um livro. Uma vez que o bÃ¡sico
-              jÃ¡ estava pronto, eu achei que nÃ£o haveria maiores problemas.
-              Eu apenas precisaria esclarecer umas coisas, adicionar alguns exercÃ­cios extras,
-              talvez mais alguns exemplos, um pouquinho mais de capÃ­tulos, enviar ele para
-              uns 50 revisores...
-
-        </p>
-        <p>
-                        Isso me tomou outro ano, mas agora eu acho que estÃ¡ realmente
-              <em>muito</em> bom, grande parte graÃ§as Ã s centenas
-              de boas almas que me ajudaram a escrever este livro.
-
-        </p>
-        <p>
-                        O que estÃ¡ nesse site Ã© o tutorial original, quase inalterado
-              desde 2004. Para o melhor e mais atualizado, vocÃª pode
-              querer dar uma olhada <a href="http://pragmaticprogrammer.com/titles/fr_ltp">no livro</a>.
-
-        </p>
-        <div class="fleur"><div class="fleur_stem">&nbsp;</div></div>
-        <h2>
-          Notas Para Professores
-        </h2>
-        <p>
-                        HÃ¡ algumas normas de conduta que eu tentei seguir.
-              Eu acho que elas tornam o processo de aprendizado muito mais suave;
-              ensinar a programar jÃ¡ Ã© difÃ­cil por si sÃ³. Se vocÃª estÃ¡
-              ensinando ou guiando alguÃ©m pelas vias hackers, essas idÃ©ias podem lhe ajudar tambÃ©m.
-
-        </p>
-        <p>
-                        Primeiramente, eu tentei separar os conceitos o mÃ¡ximo possÃ­vel,
-              assim o estudante tem que aprender apenas um conceito de cada vez.
-              Isso foi difÃ­cil no comeÃ§o, mas um <em>pouco</em> mais fÃ¡cil
-              depois que eu peguei a prÃ¡tica. Algumas coisas devem ser faladas
-              antes de outras, mas eu fiquei impressionado com quÃ£o pouca
-              hierarquia de precedÃªncia realmente existe. Eventualmente, eu apenas tive que
-              seguir uma ordem, e eu tentei arrumar as coisas de tal maneira
-              que cada nova seÃ§Ã£o fosse motivada pela anterior.
-
-        </p>
-        <p>
-                        Outro princÃ­pio que eu tinha em mente era de ensinar apenas uma maneira
-              de fazer alguma coisa. Isso Ã© um benefÃ­cio Ã³bvio em um tutorial
-              para pessoas que nunca programaram antes. Por um motivo:
-              Ã© mais fÃ¡cil aprender uma maneira de fazer uma coisa do que duas. PorÃ©m
-              o benefÃ­cio mais importante Ã© que quanto menos coisas vocÃª
-              ensinar a um novo programador, mais criativo e esperto
-              ele tem que ser na programaÃ§Ã£o. JÃ¡ que muito da programaÃ§Ã£o
-              Ã© resoluÃ§Ã£o de problemas, torna-se crucial o encorajamento em todos os estÃ¡gios
-              possÃ­veis.
-
-        </p>
-        <p>
-                        Eu tentei traÃ§ar um paralelo entre os conceitos de programaÃ§Ã£o
-              com os conceitos que um novo programador jÃ¡ possui;
-              para apresentar as idÃ©ias de uma maneira que o entendimento seja
-              intuitivo, ao invÃ©s do tutorial despejar apenas informaÃ§Ãµes.
-              ProgramaÃ§Ã£o Orientada a Objetos faz isso, por si sÃ³, muito bem.
-              Eu fui capaz de me referir a "objetos" e diferentes "tipos de objetos"
-              muito rapidamente nesse tutorial, soltando tais informaÃ§Ãµes nos mais
-              inocentes momentos. Eu nÃ£o falei nada do tipo "tudo em Ruby Ã© um objeto"
-              ou "nÃºmeros e strings sÃ£o tipos de objetos", porque essas
-              coisas nÃ£o dizem nada para um novo programador. Ao invÃ©s disso,
-              eu vou falar sobre strings (e nÃ£o sobre "objetos do tipo string"),
-              e algumas vezes eu vou me referir a "objetos", apenas no sentido de "as coisas
-              nesses programas". O fato de que todas essas <em>coisas</em> em Ruby <em>sÃ£o</em>
-              objetos fez com que esse tipo de inconsistÃªncia da minha parte funcionasse tÃ£o bem.
-
-        </p>
-        <p>
-                        Sobretudo, eu procurei fugir do jargÃ£o desnecessÃ¡rio da
-              OO, eu procurei ter certeza de que, se eles tÃªm de aprender
-              uma palavra, que aprendam a certa (Eu nÃ£o quero que eles
-              tenham de aprender em duplicidade, certo?). EntÃ£o, eu chamei
-              tudo de "strings", e nÃ£o "texto". MÃ©todos precisam ser chamados
-              de alguma coisa, entÃ£o eu os chamei de mÃ©todos.
-
-        </p>
-        <p>
-                        A medida que os exercÃ­cios foram sendo concebidos, eu achei
-              que estava com bons exercÃ­cios, mas vocÃª nunca pode colocar
-              exercÃ­cios demais. Honestamente, eu acho que eu gastei quase
-              metade do meu tempo apenas tentando fazer exercÃ­cios divertidos
-              e interessantes. ExercÃ­cios entediantes apenas aniquilam qualquer
-              desejo de programar, enquanto que o exercÃ­cio perfeito cria
-              aquela coceira no programador novo que ele nÃ£o consegue ficar sem
-              coÃ§ar. Resumindo, nÃ£o gaste muito tempo tentando fazer exercÃ­cios bons.
-
-        </p>
-        <div class="fleur"><div class="fleur_stem">&nbsp;</div></div>
-        <h2>
-          Sobre o Tutorial Original
-        </h2>
-        <p>
-                        As pÃ¡ginas do tutorial (esta pÃ¡gina, inclusive) sÃ£o geradas por um
-              <a href="/?ShowTutorialCode=true">grande programa em Ruby</a>,
-              claro. :-)
-              Assim, elas possuem recursos elegantes. Por exemplo, todos os
-              exemplos de cÃ³digo sÃ£o realmente executados toda vez que vocÃª
-              vÃª a pÃ¡gina, e a saÃ­da dos mesmos Ã© a saÃ­da que eles geram.
-              Eu acredito que essa Ã© a maneira mais fÃ¡cil, melhor e, certamente, a
-              mais legal de ter certeza que todo o cÃ³digo mostrado
-              funciona <em>exatamente</em> como eu digo que funciona.
-              VocÃª nÃ£o precisa se preocupar com a possibilidade de eu ter copiado
-              a saÃ­da de um exemplo erroneamente ou esquecido de testar um cÃ³digo:
-              tudo Ã© testado na hora que vocÃª vÃª. EntÃ£o, na seÃ§Ã£o de geradores de
-              nÃºmeros aleatÃ³rios, vocÃª vai ver que os nÃºmeros mudam sempre... <em>lindo</em>.
-              (Eu usei um truque parecido na hora de escrever o livro, mas Ã© Ã³bvio que isso
-              Ã© muito mais aparente aqui no tutorial.)
-
-        </p>
-        <h2>
-          Sobre o Material Traduzido
-        </h2>
-        <p>
-                        O cÃ³digo original descrito por Chris Pine acima, era uma versÃ£o simples e implementada sobre
-              CGI. Em total ritmo de 2008, eu mesmo (Fabio Akita) modifiquei esse cÃ³digo. Sem muitas 
-              modificaÃ§Ãµes sobre o original, transportei o cÃ³digo para rodar sobre Rails 2.0.2.
-
-        </p>
-        <p>
-                        Esse cÃ³digo estÃ¡ todo disponÃ­vel no GitHub, neste endereÃ§o:
-
-        </p>
-        <p>
-                        <em>http://github.com/jmonteiro/aprendaaprogramar</em>
-
-        </p>
-        <p>
-                        Por motivos de performance, os cÃ³digos (que localmente sÃ£o realmente executados em tempo real
-              conforme Chris explicou) nÃ£o sÃ£o executados online, sendo uma cÃ³pia estÃ¡tica. Para ter todos os
-              benefÃ­cios do programa em tempo real, baixe o cÃ³digo para rodar sobre Rails.
-
-        </p>
-        <p>
-          <a href="http://ruby-lang.org"><img src="images/PoweredByRuby.png" alt="powered by Ruby" width="234" height="60" /></a>
-        </p>
-        <div class="fleur"><div class="fleur_stem">&nbsp;</div></div>
-        <h2>
-          Agradecimentos
-        </h2>
-        <p>
-                        Finalizando, eu gostaria de agradecer a todos da lista ruby-talk
-              por suas idÃ©is e pelo encorajamento, aos meus maravilhosos
-              revisores, por sua ajuda em fazer o livro muito melhor do que
-              eu poderia fazer sozinho, especialmente Ã  minha querida esposa,
-              por ser minha principal revisora/testadora/porquinho-da-Ã­ndia/musa, ao Matz,
-              por ter criado essa fabulosa linguagem, e aos Pragmatic Programmers, por
-              me falar sobre a linguagem&mdash;e, Ã© claro, por publicar meu livro!
-
-        </p>
-        <p>
-                        Se vocÃª notar qualquer erro ou falha de digitaÃ§Ã£o, se tiver
-              qualquer comentÃ¡rio ou sugestÃ£o, ou um bom exercÃ­cio que eu possa
-              incluir, por favor <a href="http://www.cloudflare.com/email-protection#5a39322833291a2a33343f743c37">me avise</a> (se vocÃª falar
-              inglÃªs) ou, se preferir falar em portuguÃªs,
-              <a href="http://www.cloudflare.com/email-protection#4a203f2623250a2725243e2f233825642f3e23642838">avise o JÃºlio Monteiro</a>.
-
-        </p>
-        <div class="fleur"><div class="fleur_stem">&nbsp;</div></div>
-        <p style="padding-bottom: 20px;">
-          &copy; 2003-2014 Chris Pine
-        </p>
-      </div>
-    </div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP">
+	<meta name="generator" content="tDiary 2.2.0">
+	<meta http-equiv="Last-Modified" content="Fri, 18 Jan 2013 01:19:22 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=EUC-JP">
+	<meta name="author" content="jijixi">
+	<link rev="made" href="mailto:jijixi@azito.com">
+	<link rel="index" title="¥È¥Ã¥×" href="http://jijixi.azito.com/jijixi/">
+	<link rel="start" title="ºÇ¿·" href="./index.rb">
+	<link rel="alternate" media="handheld" type="text/html" href="http://jijixi.azito.com/cgi-bin/diary/index.rb">
+	
+	
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="../../css/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="../../css/autumn.css" title="autumn" type="text/css" media="all">
+	<title>jijixi's diary</title>
+	
   <script type="text/javascript">
-/* <![CDATA[ */
-(function(){try{var s,a,i,j,r,c,l=document.getElementsByTagName("a"),t=document.createElement("textarea");for(i=0;l.length-i;i++){try{a=l[i].getAttribute("href");if(a&&"www.cloudflare.com/email-protection"==a.substr(7 ,35)){s='';j=43;r=parseInt(a.substr(j,2),16);for(j+=2;a.length-j&&a.substr(j,1)!='X';j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}j+=1;s+=a.substr(j,a.length-j);t.innerHTML=s.replace(/</g,"&lt;").replace(/>/g,"&gt;");l[i].setAttribute("href","mailto:"+t.value);}}catch(e){}}}catch(e){}})();
-/* ]]> */
+  <!--
+  // http://www.din.or.jp/~hagi3/JavaScript/JSTips/Mozilla/
+  // _dom : kind of DOM.
+  //        IE4 = 1, IE5+ = 2, NN4 = 3, NN6+ = 4, others = 0
+  _dom = document.all?(document.getElementById?2:1)
+                     :(document.getElementById?4
+                     :(document.layers?3:0));
+  var _calendar3_popElement = null;
+  var _calendar3_popCount = 0;
+
+  if (document.compatMode){
+    if (_dom==2 && document.compatMode=="CSS1Compat") _dom = 2.5;
+  } // Win IE6
+
+  function getLeft(div){
+    result = 0;
+    while (1){
+      div = div.offsetParent;
+      result += div.offsetLeft;
+      if (div.tagName=="BODY") return result;
+    }
+  }
+
+  function getTop(div){
+    result = 0;
+    while (1){
+      div = div.offsetParent;
+      result += div.offsetTop;
+      if (div.tagName=="BODY") return result;
+    }
+  }
+
+  function moveDivTo(div,left,top){
+    if(_dom==4){
+      div.style.left=left+'px';
+      div.style.top =top +'px';
+      return;
+    }
+    if(_dom==2.5 || _dom==2 || _dom==1){
+      div.style.pixelLeft=left;
+      div.style.pixelTop =top;
+      return;
+    }
+    if(_dom==3){
+      div.moveTo(left,top);
+      return;
+    }
+  }
+
+  function moveDivBy(div,left,top){
+    if(_dom==4){
+      div.style.left=div.offsetLeft+left;
+      div.style.top =div.offsetTop +top;
+      return;
+    }
+    if(_dom==2.5 || _dom==2){
+      div.style.pixelLeft=div.offsetLeft+left;
+      div.style.pixelTop =div.offsetTop +top;
+      return;
+    }
+    if(_dom==1){
+      div.style.pixelLeft+=left;
+      div.style.pixelTop +=top;
+      return;
+    }
+    if(_dom==3){
+      div.moveBy(left,top);
+      return;
+    }
+  }
+
+  function getDivLeft(div){
+    if(_dom==2.5) return div.offsetLeft+getLeft(div);
+    if(_dom==4 || _dom==2) return div.offsetLeft;
+    if(_dom==1)            return div.style.pixelLeft;
+    if(_dom==3)            return div.left;
+    return 0;
+  }
+
+  function getDivTop(div){
+    if(_dom==2.5) return div.offsetTop+getTop(div);
+    if(_dom==4 || _dom==2) return div.offsetTop;
+    if(_dom==1)            return div.style.pixelTop;
+    if(_dom==3)            return div.top;
+    return 0;
+  }
+
+  function getDivWidth (div){
+    if(_dom==4 || _dom==2.5 || _dom==2) return div.offsetWidth;
+    if(_dom==1)            return div.style.pixelWidth;
+    if(_dom==3)            return div.clip.width;
+    return 0;
+  }
+
+  function getDivHeight(div){
+    if(_dom==4 || _dom==2.5 || _dom==2) return div.offsetHeight;
+    if(_dom==1)            return div.style.pixelHeight;
+    if(_dom==3)            return div.clip.height;
+    return 0;
+  }
+
+  function popup(target,element,notitle) {
+    _calendar3_popCount++;
+    popdownNow();
+    if (navigator.appName=='Microsoft Internet Explorer') {
+      moveDivTo(element,getDivLeft(target)+getDivWidth(target),getDivTop(target)+getDivHeight(target)*13/8);
+    } else {
+      moveDivTo(element,getDivLeft(target)+getDivWidth(target)/2,getDivTop(target)+(getDivHeight(target)*2)/3);
+    }
+    element.style.display="block";
+    notitle.title="";
+  }
+
+  function popdown(element) {
+    _calendar3_popElement=element;
+    setTimeout('popdownDelay()', 2000);
+  }
+
+  function popdownDelay() {
+    _calendar3_popCount--;
+    if (_calendar3_popCount==0) {
+      popdownNow();
+    }
+  }
+
+  function popdownNow() {
+    if (_calendar3_popElement!=null) {
+      _calendar3_popElement.style.display="none";
+      _calendar3_popElement=null;
+    }
+  }
+  // -->
 </script>
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://jijixi.azito.com/diary/index.rdf">
+	<meta name="robots" content="noindex,follow">
+</head>
+<body>
+
+
+<div class="adminmenu">
+<span class="adminmenu"><a href="http://jijixi.azito.com/jijixi/">¥È¥Ã¥×</a></span>
+<span class="adminmenu"><a href="./index.rb?date=20101115-3">&laquo;Á°3ÆüÊ¬</a></span>
+<span class="adminmenu"><a href="update.rb" rel="nofollow">ÄÉµ­</a></span>
+</div>
+<h1>¤¸¤¸¤£¤ÎÆüµ­¡¢¥Ä¥Ã¥³¥ß²Ä</h1>
+<p>
+Twitter: @jijixi_org<br />
+Xbox Live: jijixi
+</p>
+<div style="text-align: right;">
+<a href="http://jijixi.azito.com/cgi-bin/diary/index.rb?date=19700102">½é¿´¼Ô¤¬½ñ¤¤¤¿ OCaml ÆþÌç</a><br>
+<a href="http://jijixi.azito.com/cgi-bin/diary/index.rb?date=19700201">Spotlight tips ¥µ¥¤¥ÈÆâ¥ê¥ó¥¯½¸</a>
+</div>
+<div class="calendar">
+<div class="year">1970|<a href="./index.rb?date=197001">01</a>|<a href="./index.rb?date=197002">02</a>|</div>
+<div class="year">2003|<a href="./index.rb?date=200310">10</a>|<a href="./index.rb?date=200311">11</a>|<a href="./index.rb?date=200312">12</a>|</div>
+<div class="year">2004|<a href="./index.rb?date=200401">01</a>|<a href="./index.rb?date=200402">02</a>|<a href="./index.rb?date=200403">03</a>|<a href="./index.rb?date=200404">04</a>|<a href="./index.rb?date=200405">05</a>|<a href="./index.rb?date=200406">06</a>|<a href="./index.rb?date=200407">07</a>|<a href="./index.rb?date=200408">08</a>|<a href="./index.rb?date=200409">09</a>|<a href="./index.rb?date=200410">10</a>|<a href="./index.rb?date=200411">11</a>|<a href="./index.rb?date=200412">12</a>|</div>
+<div class="year">2005|<a href="./index.rb?date=200501">01</a>|<a href="./index.rb?date=200502">02</a>|<a href="./index.rb?date=200503">03</a>|<a href="./index.rb?date=200504">04</a>|<a href="./index.rb?date=200505">05</a>|<a href="./index.rb?date=200506">06</a>|<a href="./index.rb?date=200507">07</a>|<a href="./index.rb?date=200508">08</a>|<a href="./index.rb?date=200509">09</a>|<a href="./index.rb?date=200510">10</a>|<a href="./index.rb?date=200511">11</a>|<a href="./index.rb?date=200512">12</a>|</div>
+<div class="year">2006|<a href="./index.rb?date=200601">01</a>|<a href="./index.rb?date=200602">02</a>|<a href="./index.rb?date=200603">03</a>|<a href="./index.rb?date=200604">04</a>|<a href="./index.rb?date=200605">05</a>|<a href="./index.rb?date=200606">06</a>|<a href="./index.rb?date=200607">07</a>|<a href="./index.rb?date=200608">08</a>|<a href="./index.rb?date=200609">09</a>|<a href="./index.rb?date=200610">10</a>|<a href="./index.rb?date=200611">11</a>|<a href="./index.rb?date=200612">12</a>|</div>
+<div class="year">2007|<a href="./index.rb?date=200701">01</a>|<a href="./index.rb?date=200702">02</a>|<a href="./index.rb?date=200703">03</a>|<a href="./index.rb?date=200704">04</a>|<a href="./index.rb?date=200705">05</a>|<a href="./index.rb?date=200706">06</a>|<a href="./index.rb?date=200707">07</a>|<a href="./index.rb?date=200708">08</a>|<a href="./index.rb?date=200709">09</a>|<a href="./index.rb?date=200710">10</a>|<a href="./index.rb?date=200711">11</a>|<a href="./index.rb?date=200712">12</a>|</div>
+<div class="year">2008|<a href="./index.rb?date=200801">01</a>|<a href="./index.rb?date=200802">02</a>|<a href="./index.rb?date=200803">03</a>|<a href="./index.rb?date=200804">04</a>|<a href="./index.rb?date=200805">05</a>|<a href="./index.rb?date=200806">06</a>|<a href="./index.rb?date=200807">07</a>|<a href="./index.rb?date=200808">08</a>|<a href="./index.rb?date=200809">09</a>|<a href="./index.rb?date=200810">10</a>|<a href="./index.rb?date=200811">11</a>|<a href="./index.rb?date=200812">12</a>|</div>
+<div class="year">2009|<a href="./index.rb?date=200901">01</a>|<a href="./index.rb?date=200902">02</a>|<a href="./index.rb?date=200903">03</a>|<a href="./index.rb?date=200904">04</a>|<a href="./index.rb?date=200905">05</a>|<a href="./index.rb?date=200906">06</a>|<a href="./index.rb?date=200907">07</a>|<a href="./index.rb?date=200908">08</a>|<a href="./index.rb?date=200909">09</a>|<a href="./index.rb?date=200910">10</a>|<a href="./index.rb?date=200911">11</a>|<a href="./index.rb?date=200912">12</a>|</div>
+<div class="year">2010|<a href="./index.rb?date=201001">01</a>|<a href="./index.rb?date=201002">02</a>|<a href="./index.rb?date=201003">03</a>|<a href="./index.rb?date=201004">04</a>|<a href="./index.rb?date=201005">05</a>|<a href="./index.rb?date=201006">06</a>|<a href="./index.rb?date=201007">07</a>|<a href="./index.rb?date=201008">08</a>|<a href="./index.rb?date=201011">11</a>|</div>
+<div class="year">2011|<a href="./index.rb?date=201105">05</a>|</div>
+<div class="year">2012|<a href="./index.rb?date=201201">01</a>|</div>
+</div>
+
+<hr class="sep">
+
+
+	
+<div class="day">
+<h2><span class="date">
+<a href="./index.rb?date=20120125">2012-01-25</a>
+</span> 
+<span class="title"></span> <span class="nyear">[<a href="./index.rb?date=0125" title="Ä¹Ç¯Æüµ­">Ä¹Ç¯Æüµ­</a>]</span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./index.rb?date=20120125#p01"><span class="sanchor">%</span></a> [<a href="./index.rb?year=2012;category=objc">objc</a>] ARC ¤ÎºÇÅ¬²½¥Ð¥°¤é¤·¤­¤â¤Î¤òÆ§¤ó¤À·ï</h3>
+<p>
+-O0¤À¤ÈÌäÂêÌµ¤¤¤Î¤ËºÇÅ¬²½¤¬¥ª¥ó¤À¤È»²¾È¥«¥¦¥ó¥È¤¬¤ª¤«¤·¤¯¤Ê¤ë¥±¡¼¥¹¤¬¤¢¤ë¤è¤¦¤À¡£
+iOS¥·¥ß¥å¥ì¡¼¥¿¤Ç¤â¼Âµ¡¤Ç¤âÆ±¤¸¤è¤¦¤ËÍî¤Á¤ë¡£Mac OS X ¤À¤È¤É¤¦¤Ê¤ë¤«¤ÏÌ¤³ÎÇ§¡£
+Ä´¤Ù¤ë¤Î¤á¤ó¤É¤¯¤µ¤¤¤«¤é´ûÃÎ¤ÎÌäÂê¤Ê¤Î¤«¤ÏÃÎ¤é¤Ê¤¤¡£
+¤½¤ÎÊÕ¾Ü¤·¤¤¿Í¤Ç¡¢¤â¤·Ì¤ÃÎ¤Î¥Ð¥°¤À¤è¤Ã¤Æ¤³¤È¤Ê¤éÊó¹ð¤·¤Æ¤ª¤¤¤Æ¤¯¤ì¤ë¤È´ò¤·¤¤¤«¤â¡£
+¤É¤³¤ËÊó¹ð¤¹¤ê¤ã¤¤¤¤¤Î¤«¤ï¤«¤é¤ó¤·¡£</p>
+<p>´Ä¶­¤ÏXcode 4.2.1 + iOS SDK 5¤Ç¡¢ºÆ¸½¥³¡¼¥É¤Ï°Ê²¼¤Î¤è¤¦¤Ê´¶¤¸¡£</p>
+<pre>
++ (NSArray *)arrayForTestWithObject:(id)element {
+    NSArray *aResult = nil;
+    @autoreleasepool {
+        NSArray *a = [NSArray arrayWithObjects:element, nil];
+        if (rand() &gt; 0) { // (1)
+            aResult = [a mutableCopy];
+        }
+    }
+    return aResult;
+}
+
+- (NSArray *)arrayForTest {
+    return [[self class] arrayForTestWithObject:@"hoge"]; // (2)
+}
+
+- (void)testARC {
+    NSArray *a = [self arrayForTest];
+    NSLog(@"%@", a);
+}
+</pre>
+<p>Å¬Åö¤Ê¤È¤³¤í¤Ë¤³¤ì¤ò¥³¥Ô¥Ú¤·¤ÆºÇÅ¬²½¥ª¥ó¤Î¾õÂÖ¤Ç (Release¥Ó¥ë¥É¤Ë¤¹¤ë¤È¼ê¤Ã¼è¤êÁá¤¤) testARC ¥á¥½¥Ã¥É¤ò¸Æ¤Ö¤È (2) ¤Î¤È¤³¤í¤ÇÍî¤Á¤ë¡£
+¥·¥ß¥å¥ì¡¼¥¿¤Ç Enable Zombie Objects ¤ò ON ¤Ë¤·¤Æ¤¤¤ì¤Ð¡¢</p>
+<pre>
+*** -[__NSArrayM retain]: message sent to deallocated instance 0x6b2c060
+</pre>
+<p>¥í¥°¤Ë¤³¤ó¤Ê¤Î¤¬½ÐÎÏ¤µ¤ì¤ë¤Ï¤º¡£</p>
+<p>arrayForTestWithObject: Æâ¤Ç aResult ¤Î»²¾È¿ô¤ÎÄ´À°¤¬¤ª¤«¤·¤Ê¤³¤È¤Ë¤Ê¤Ã¤Æ¤¤¤ëÌÏÍÍ¡£
+(1)¤Î¤È¤³¤í¤¬´Î¤é¤·¤¯¡¢Îã¤¨¤Ð¤³¤³¤Î¾ò·ï¤ò YES (¾ï¤Ë¿¿) ¤Ë¤·¤¿¤ê¤¹¤ë¤ÈÍî¤Á¤Ê¤¯¤Ê¤ë¡£
+if ¤ò¼è¤ÃÊ§¤Ã¤Æ¤âÆ±¤¸¤è¤¦¤ËÍî¤Á¤Ê¤¤¡£
+¤µ¤é¤Ë¡¢@autoreleasepool ¥Ö¥í¥Ã¥¯¤ò¼è¤ÃÊ§¤¨¤ÐÌäÂê¤Ïµ¯¤­¤Ê¤¤¤Î¤Ç¡¢@autoreleasepool ¤ÎÃæ¤Ç¾ò·ï¤Ë¤è¤Ã¤ÆÊÑ¿ô¤Ë¥¢¥µ¥¤¥ó¤·¤¿¤ê¤·¤Ê¤«¤Ã¤¿¤ê¤Ã¤Æ¤³¤È¤¬¤¢¤ë¤È´í¸±¤Ý¤¤¡£</p>
+<p>¤½¤ó¤Ê¤³¤ó¤Ê¤ÇÈ¾ÆüÄÙ¤ì¤¿º£Æü¤Ç¤¢¤Ã¤¿¡£</p>
+<p>¤Á¤Ê¤ß¤Ë¡¢¾åµ­¤ÎÎã¤Ç¸À¤¦¤ÈÊÑ¿ôÍÑ°Õ¤·¤Æ¤ª¤¤¤Æ¤É¤¦¤Î¤Ê¤ó¤Æ¤³¤È¤Ï¤»¤º¤Ë¡¢¤¤¤­¤Ê¤êreturn¤·¤Æ¤·¤Þ¤¨¤ÐÌäÂê¤Ê¤«¤Ã¤¿¤ê¤¹¤ë¡£</p>
+<pre>
++ (NSArray *)arrayForTestWithObject:(id)element {
+    @autoreleasepool {
+        NSArray *a = [NSArray arrayWithObjects:element, nil];
+        if (rand() &gt; 0) {
+            return [a mutableCopy]; // (3)
+        }
+    }
+    return nil;
+}
+</pre>
+<p>(3)¤ÎÉôÊ¬¡¢@autoreleasepool ¤À¤È¤³¤¦½ñ¤±¤ë¤Î¤Ç³Ú¤À¤·¡¢¾åµ­¤ÎÌäÂê¤Î¤³¤È¤ò¹Í¤¨¤ì¤Ð¤à¤·¤í¤³¤¦½ñ¤¤¤¿Êý¤¬¤¤¤¤¤ó¤À¤í¤¦¤Í¡£
+¤Þ¤¢¡¢º£²ó¤Ï¸µ¡¹¼«Ê¬¤ÇNSAutoreleasePool¤ò»È¤Ã¤Æ¤¿¥³¡¼¥É¤ò¥³¥ó¥Ð¡¼¥È¤·¤¿¤â¤Î¤À¤Ã¤¿¤«¤é¡¢¤³¤¦¤¤¤¦»öÂÖ¤Ë¤Ê¤Ã¤¿¤ó¤À¤±¤É¡£</p>
+<p>(ÄÉµ­ 2012/3/30)</p>
+<p>Xcode 4.3.2 ¤ÇÄÉ»î¤·¤¿¤È¤³¤í¾åµ­ (3) ¤ÎÎã¤Ç¤â¥À¥á¤Ê¤Î¤ò³ÎÇ§¡£
+Åö»þ´ª°ã¤¤¤·¤Æ¤¤¤¿¤Î¤«¡¢¤½¤Î¸å¾õ¶·¤¬ÊÑ¤ï¤Ã¤¿¤Î¤«¤ÏÉÔÌÀ¤À¤¬¡¢¸½¾õ¤Ç¤Ï¾ò·ï¤Ë¤è¤Ã¤Ænil¤Ë¤Ê¤êÆÀ¤ëÃÍ¤òÊÖ¤·¤¿¤¤»þ¤Ï @autoreleasepool ¥Ö¥í¥Ã¥¯¤òÈò¤±¤¿Êý¤¬ÎÉ¤µ¤½¤¦¡£
+¤Û¤ó¤È¤Ë¤É¤¦¤·¤Æ¤â @autoreleasepool ¤¬»È¤¨¤Ê¤¤¤Èº¤¤ë¤Ã¤Æ¾ì¹ç¤Ë¤Ï°Ê²¼¤Î¤è¤¦¤Ê¤³¤È¤ò¤¹¤ì¤Ð°ì±þ²óÈò¤Ç¤­¤ë¤Ã¤Ý¤¤¡£
+¤¤¤«¤Ë¤â¾éÄ¹¤Ç¤·¤«¤â¥¢¥Û¤Ã¤Ý¤¤¤±¤É¡£</p>
+<pre>
++ (NSArray *)arrayForTestWithObject:(id)element { // (4)
+    NSArray *aResult = nil;
+    @autoreleasepool {
+        NSArray *a = [NSArray arrayWithObjects:element, nil];
+        if (rand() &gt; 0) {
+            aResult = [a mutableCopy];
+        }
+    }
+    return ([aResult isKindOfClass:[NSArray class]] ? aResult : nil); // (5)
+}
+</pre>
+<p>ÉÔ»×µÄ¤Ê¤³¤È¤Ë¡¢(5) ¤Î¾ò·ï¤ò¤¿¤À¤Î nil ¥Á¥§¥Ã¥¯¤À¤±¤Ë¤¹¤ë¤È¥À¥á¡£¤È¤Ë¤«¤¯²¿¤«¥á¥½¥Ã¥É¸Æ¤ó¤Ç¤ì¤Ð¤«¤Þ¤ï¤Ê¤¤¤Î¤«¤â¤·¤ì¤Ê¤¤¤Î¤Ç¡¢¤â¤¦¾¯¤·¥¢¥Û¤Ã¤Ý¤¯¸«¤¨¤Ê¤¤¥À¥ß¡¼µ­½Ò¤ò¹Í¤¨¤¿Êý¤¬¤¤¤¤¤«¤â¤·¤ì¤Ê¤¤¡£</p>
+<pre>
+NSLog(@"%@", aResult);
+return aResult;
+</pre>
+<p>¤Ê¤ó¤Æ¤Î¤Ç¤âÎÉ¤«¤Ã¤¿¡£¤Ò¤É¤¤¤Ê£÷</p>
+<p>(/ÄÉµ­)</p>
+<p>(ÄÉµ­ 2013/1/18)</p>
+<p>Xcode 4.5.2 + iOS SDK 6.0 ¤Ç¤ÏÄ¾¤Ã¤Æ¤ëÌÏÍÍ¡£</p>
+<p>(/ÄÉµ­)</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+	<div class="caption">[<a href="./index.rb?date=20120125#c">¥Ä¥Ã¥³¥ß¤òÆþ¤ì¤ë</a>]</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+	<hr class="sep">
+	
+<div class="day">
+<h2><span class="date">
+<a href="./index.rb?date=20110526">2011-05-26</a>
+</span> 
+<span class="title"></span> <span class="nyear">[<a href="./index.rb?date=0526" title="Ä¹Ç¯Æüµ­">Ä¹Ç¯Æüµ­</a>]</span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./index.rb?date=20110526#p01"><span class="sanchor">%</span></a> [<a href="./index.rb?year=2012;category=objc">objc</a>] ¤³¤Ã¤½¤êÇ¦¤Ó´ó¤ëÌ¤½é´ü²½ÊÑ¿ô¤Îæ«</h3>
+<p>°ÊÁ° iOS ¥¢¥×¥ê¤Î³«È¯¤Ç¤³¤ó¤Ê¤³¤È¤ò½ñ¤¤¤Æ¥Ï¥Þ¤Ã¤¿¤³¤È¤¬¤¢¤ë¡£</p>
+<pre>
+return self.someView.frame.size.height;
+</pre>
+<p>someView ¥×¥í¥Ñ¥Æ¥£ (UIView ¤Î¥µ¥Ö¥¯¥é¥¹¤Î²¿¤«) ¤Ë¤Ï²¿¤âÆþ¤Ã¤Æ¤¤¤Ê¤¤¾ì¹ç¤¬¤¢¤ë¤ó¤À¤¬¡¢¤½¤Î¾ì¹ç¡¢ºÇ½é¤Ï 0 ¤òÊÖ¤¹¤â¤Î¤Î¤·¤Ð¤é¤¯¤¹¤ë¤ÈÊÑ¤ÊÃÍ¤òÊÖ¤·»Ï¤á¤ë¡£
+¥Ç¥Ð¥Ã¥°´Ä¶­¤À¤È¤Ê¤«¤Ê¤«¤½¤Î¸½¾Ý¤¬½Ð¤Ê¤¤¤Î¤Ç¸¶°ø¤ÎÆÃÄê¤ËÆñµ·¤·¤¿¤ó¤À¤¬¡¢¤ï¤«¤Ã¤Æ¤·¤Þ¤¨¤Ð¡Ö¤¢¤¢¤½¤¦¤«¡¢¤Ê¤ó¤Çµ¤¤Å¤«¤Ê¤«¤Ã¤¿¤ó¤À¡×¤È¤¤¤¦ÏÃ¡£</p>
+<p>Objective-C ¤Ç¤Ï nil ¤ËÂÐ¤¹¤ë¥á¥Ã¥»¡¼¥¸ (¥á¥½¥Ã¥É¸Æ¤Ó½Ð¤·) ¤Ï²¿¤âµ¯¤³¤é¤º nil ¤¬ÊÖ¤ë¤³¤È¤Ë¤Ê¤Ã¤Æ¤¤¤ë¤Î¤Ç¡¢ÆÃ¤Ë¥¨¥é¡¼¤ò½Ð¤¹É¬Í×¤¬Ìµ¤¤¾ì¹ç¤Ë¤Ï¤Ä¤¤ nil ¤«¤É¤¦¤«¤Î¥Á¥§¥Ã¥¯¤ò¾ÊÎ¬¤·¤Æ¤·¤Þ¤¦¤ó¤À¤¬¡¢¾åµ­¤Î¤è¤¦¤Ê¾ì¹ç¤Ë¤Ï¤½¤ì¤¬µØ¤Ë¤Ê¤ë¡£</p>
+<p>UIView ¤Î frame ¥×¥í¥Ñ¥Æ¥£¤Î·¿¤Ï CGRect ¤Ç¡¢¤³¤ì¤Ï¥ª¥Ö¥¸¥§¥¯¥È¤Ç¤Ï¤Ê¤¯¹½Â¤ÂÎ¤Ç¤¢¤ë¡£
+¹½Â¤ÂÎ¤Ë´Ø¤·¤Æ¤Ï C ¤½¤Î¤â¤Î¤È¹Í¤¨¤Æ¤¤¤¤¡£
+¤Ä¤Þ¤ê¾åµ­¤Î¤è¤¦¤Ê¥³¡¼¥É¤Ï¼ÂºÝ¤Ë¤Ï°Ê²¼¤Î¤è¤¦¤Ê½èÍý¤ÎÎ®¤ì¤Ë¤Ê¤Ã¤Æ¤¤¤ë (¤È»×¤ï¤ì¤ë)¡£</p>
+<pre>
+UIView *aView = [self someView];
+CGRect frame = [aView frame];
+return frame.size.height;
+</pre>
+<p>aView ¤¬ nil ¤Î¾ì¹ç¡¢frame ¤Ë¤Ï nil ¤¬ÂåÆþ¤µ¤ì¤ë¤Î¤À¤í¤¦¡£
+¤½¤¦¤À¤È¤¹¤ì¤ÐÅöÁ³¤½¤ì¤Ï CGRect ¤Î½é´ü²½¤È¤·¤Æ¤ÏÉÔ½½Ê¬¤Ç¡¢¤½¤Î·ë²Ì¡¢¤¢¤ëÄøÅÙ¥á¥â¥êÎÎ°è¤¬±ø¤ì¤Æ¤¯¤ë¤È¥´¥ßÃÍ¤¬Æþ¤Ã¤Æ¤¯¤ë¤Î¤Ç return ¤µ¤ì¤ëÃÍ¤¬¤ª¤«¤·¤¯¤Ê¤ë¡£
+C ¤Î·Ð¸³¤¬¤¢¤ëÄøÅÙ¤¢¤ì¤ÐÅö¤¿¤êÁ°¤ÎµóÆ°¤Ç¤Ï¤¢¤ë¤¬¡¢¤½¤¦¤Ç¤Ê¤¤¾ì¹ç¤Ë¤Ï¤µ¤Ã¤Ñ¤ê°ÕÌ£¤¬¤ï¤«¤é¤Ê¤¤¤«¤â¤·¤ì¤Ê¤¤¡£
+¤ä¤Ã¤Ñ¤ê Objective-C ¤ò»È¤¦¿Í¤Ï C ¤âÉ¬½¤¤Ë¤·¤¿Êý¤¬¤¤¤¤¤ó¤¸¤ã¤Ê¤¤¤«¡£</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+	<div class="caption">[<a href="./index.rb?date=20110526#c">¥Ä¥Ã¥³¥ß¤òÆþ¤ì¤ë</a>]</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+	<hr class="sep">
+	
+<div class="day">
+<h2><span class="date">
+<a href="./index.rb?date=20110514">2011-05-14</a>
+</span> 
+<span class="title"></span> <span class="nyear">[<a href="./index.rb?date=0514" title="Ä¹Ç¯Æüµ­">Ä¹Ç¯Æüµ­</a>]</span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./index.rb?date=20110514#p01"><span class="sanchor">%</span></a> [<a href="./index.rb?year=2012;category=game">game</a>] Condemned 2 City Museum ÁÜºº¹¶Î¬</h3>
+<p>¤³¤³¤À¤±¥´¡¼¥ë¥É¤¬¼è¤ì¤Æ¤Ê¤«¤Ã¤¿¤¬¡¢¤è¤¦¤ä¤¯²¿¤È¤«¤Ê¤Ã¤¿¤Î¤Ç¥á¥â¡£</p>
+<ul>
+<li>3 Did you find any fingerprints on the paper?</li>
+<li>1 Do you think Vanhorn nursed his nephew back to health?</li>
+<li>2 What about the saw? You said it looked medieval?</li>
+</ul>
+<ul>
+<li>Camera ID 1501</li>
+</ul>
+<ul>
+<li>Medieval Tools 13A (¥«¥á¥é¤Î±ÇÁü¤ò³ÎÇ§¤·¤¿¸å¤ËÅ¸¼¨¼¼¤Î³¬ÃÊÉÕ¶á¤Ë°ÆÆâ´ÇÈÄ¤¬¤¢¤ë¤Î¤Ç¤½¤ì¤òÄ´¤Ù¤ë)</li>
+</ul>
+<ul>
+<li>1 Any evidence the metal pieces came from Rachael Mars's body?</li>
+</ul>
+<p>Æ¬¤Î¿ô»ú¤ÏÁªÂò»è¤Î°ÌÃÖ¡£
+13A ¤Î´ÇÈÄ¤ÎÂ¸ºß¤Ëµ¤ÉÕ¤«¤Ê¤«¤Ã¤¿¤»¤¤¤Çº£¤Þ¤Ç Perfect ¤¬¼è¤ì¤Æ¤Ê¤«¤Ã¤¿¡£
+°ÌÃÖÅª¤Ë¸«Æ¨¤·¤ä¤¹¤¤¤·¡¢Ìµ»ë¤·¤Æ¤âÏÃ¤¬¿Ê¤à¤Î¤¬·ë¹½æ«¡£</p>
+<p>¤Á¤Ê¤ß¤Ë·ÙÈ÷°÷¤ò»¦¤µ¤Ê¤¤¤è¤¦¤Ë¤¹¤ë¥ß¥Ã¥·¥ç¥ó¤Ï¡¢¼«Ê¬¤¬»¦¤µ¤Ê¤±¤ì¤Ð¤¤¤¤¤À¤±¤Ê¤Î¤Ç¼ÙËâ¤Ê¾ì¹ç¤ÏÅ¥ËÀ¤¿¤Á¤Ë»ÏËö¤·¤Æ¤â¤é¤¦¤ÈÎÉ¤¤¡£</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+	<div class="caption">[<a href="./index.rb?date=20110514#c">¥Ä¥Ã¥³¥ß¤òÆþ¤ì¤ë</a>]</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+	<hr class="sep">
+
+<div class="adminmenu">
+<span class="adminmenu"><a href="http://jijixi.azito.com/jijixi/">¥È¥Ã¥×</a></span>
+<span class="adminmenu"><a href="./index.rb?date=20101115-3">&laquo;Á°3ÆüÊ¬</a></span>
+<span class="adminmenu"><a href="update.rb" rel="nofollow">ÄÉµ­</a></span>
+</div>
+<div style="text-align: right;">
+<p>Æüµ­¤Ã¤Æ¤Î¤ÏËÜÍè¡¢¼«Ê¬¤ÇÆÉ¤ßÊÖ¤¹¤¿¤á¤Ë¤¢¤ë¤â¤ó¤À¤è¤Ê¤¢¡Ä¡Ä<br>
+¤â¤·¤¯¤ÏÍ­Ì¾¿Í¤Ë¤Ê¤Ã¤¿¤é»à¸å¤ËËÜ¤Ë¤Ê¤Ã¤¿¤ê¤È¤«¤«¡©</p>
+<p><a href='http://jijixi.azito.com/diary/index.rdf'>RSS ¤Ï¤³¤Á¤é</a></p>
+<!-- 0.0.0.0 -->
+<p>jijixi at azito.com</p>
+</div>
+
+
+
+
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 2.2.0<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.8.1
+</div>
 </body>
 </html>
