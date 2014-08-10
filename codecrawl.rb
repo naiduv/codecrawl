@@ -1,6 +1,6 @@
 #codecrawl.rb crawls google for raw ruby code and uploads it to github
 require 'net/http'
-require 'Timeout'
+require 'timeout'
 
 def push_to_git
   system 'git add --all'
