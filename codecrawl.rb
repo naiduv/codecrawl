@@ -1,20 +1,37 @@
 #codecrawl.rb crawls google for raw ruby code and uploads it to github
 require 'net/http'
 
-links = []
+def push_to_git
+  system 'git add --all'
+  system 'git commit -a -m "found new ruby files"'
+  system 'git pull origin master'
+  system 'git push origin master'
+end
+
 link_limit= 80000
 num_links = 0
 
-uri = URI('http://www.google.com/search?q=require+OR+gem+OR+puts+-git+-bitbucket+-github+-rubygems.org+-metager.de+-html+filetype%3Arb&oq=require+OR+gem+OR+puts+-git+-bitbucket+-github+-rubygems.org+-metager.de+-html+filetype%3Arb&aqs=chrome..69i57.730j0j1&sourceid=chrome&es_sm=93&ie=UTF-8')
+uri = URI('http://www.google.com/search?q=require+OR+gem+OR+puts+-git+-bitbucket+-github+-rubygems.org+-metager.de+-html+filetype%3Arb&safe=active')
 source = Net::HTTP.get(uri)
 
 pages = ''
+
+
 x=1
 while num_links<=link_limit do
+  
+  links = []
+  
+  lastpages = uri.to_s
+
   source.gsub(/\/search.*?start=/){|f|
     pages = 'http://www.google.com' + f.gsub(/href="/,'')
-    break
+    if (pages.length/lastpages.length)==1
+      break
+    end
   }
+  pages = pages.gsub(/amp;/, '')
+  lastpages = pages
 
   source.gsub(/href="\/url\?q=.*?">/) {|f|
     if(f.include? 'webcache') || (f.include? 'https')
@@ -35,11 +52,11 @@ while num_links<=link_limit do
 
   x+=1
   more_links = (x*10).to_s
+
+  puts "\n\n" + pages+more_links
+
   source = Net::HTTP.get(URI(pages+more_links))
 
-  system 'git add --all'
-  system 'git commit -a -m "found new ruby files"'
-  system 'git pull origin master'
-  system 'git push origin master'
 
+  push_to_git
 end
