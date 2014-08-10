@@ -352,7 +352,7 @@ Expensive parser function count: 0/100
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 							<ul id="footer-info">
 											<li id="footer-info-lastmod"> This page was last modified on 7 June 2010, at 22:55.</li>
-											<li id="footer-info-viewcount">This page has been accessed 12,070 times.</li>
+											<li id="footer-info-viewcount">This page has been accessed 12,072 times.</li>
 									</ul>
 							<ul id="footer-places">
 											<li id="footer-places-privacy"><a href="/wiki/ThinkWiki:Privacy_policy" title="ThinkWiki:Privacy policy">Privacy policy</a></li>
@@ -384,7 +384,7 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 <script type="text/javascript">
 var pageTracker = _gat._getTracker("UA-752482-1");
 pageTracker._trackPageview();
-</script><!-- Served in 0.063 secs. --><!-- Kontera(TM);-->
+</script><!-- Served in 0.037 secs. --><!-- Kontera(TM);-->
 <!--
 <script type="text/javascript">
 var dc_AdLinkColor = 'blue';
