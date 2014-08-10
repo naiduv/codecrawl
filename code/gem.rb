@@ -21,7 +21,7 @@
  var codesite_token = null;
  
  
- var CS_env = {"assetHostPath": "http://www.gstatic.com/codesite/ph", "profileUrl": null, "domainName": null, "loggedInUserEmail": null, "relativeBaseUrl": "", "token": null, "projectName": "pmip", "assetVersionPath": "http://www.gstatic.com/codesite/ph/13997016681179179006", "projectHomeUrl": "/p/pmip"};
+ var CS_env = {"relativeBaseUrl": "", "domainName": null, "assetHostPath": "http://www.gstatic.com/codesite/ph", "assetVersionPath": "http://www.gstatic.com/codesite/ph/13997016681179179006", "profileUrl": null, "projectHomeUrl": "/p/pmip", "token": null, "projectName": "pmip", "loggedInUserEmail": null};
  var _gaq = _gaq || [];
  _gaq.push(
  ['siteTracker._setAccount', 'UA-18071-1'],
@@ -1193,7 +1193,7 @@ chooser for multiple results</pre>
  // register our source container with the commenting code
  var paths = {'svn208': '/trunk/pmip/plugins/core/lib/gem.rb'}
  codereviews = CR_controller.setup(
- {"assetHostPath": "http://www.gstatic.com/codesite/ph", "profileUrl": null, "domainName": null, "loggedInUserEmail": null, "relativeBaseUrl": "", "token": null, "projectName": "pmip", "assetVersionPath": "http://www.gstatic.com/codesite/ph/13997016681179179006", "projectHomeUrl": "/p/pmip"}, '', 'svn208', paths,
+ {"relativeBaseUrl": "", "domainName": null, "assetHostPath": "http://www.gstatic.com/codesite/ph", "assetVersionPath": "http://www.gstatic.com/codesite/ph/13997016681179179006", "profileUrl": null, "projectHomeUrl": "/p/pmip", "token": null, "projectName": "pmip", "loggedInUserEmail": null}, '', 'svn208', paths,
  CR_BrowseIntegrationFactory);
  
  codereviews.registerActivityListener(CR_ActivityType.REVEAL_DRAFT_PLATE, showPublishInstructions);
