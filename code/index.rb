@@ -1,433 +1,113 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja-JP">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP">
-	<meta name="generator" content="tDiary 2.2.0">
-	<meta http-equiv="Last-Modified" content="Fri, 18 Jan 2013 01:19:22 GMT">
-	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=EUC-JP">
-	<meta name="author" content="jijixi">
-	<link rev="made" href="mailto:jijixi@azito.com">
-	<link rel="index" title="е╚е├е╫" href="http://jijixi.azito.com/jijixi/">
-	<link rel="start" title="║╟┐╖" href="./index.rb">
-	<link rel="alternate" media="handheld" type="text/html" href="http://jijixi.azito.com/cgi-bin/diary/index.rb">
-	
-	
-	<meta http-equiv="content-style-type" content="text/css">
-	<link rel="stylesheet" href="../../css/base.css" type="text/css" media="all">
-	<link rel="stylesheet" href="../../css/autumn.css" title="autumn" type="text/css" media="all">
-	<title>jijixi's diary</title>
-	
-  <script type="text/javascript">
-  <!--
-  // http://www.din.or.jp/~hagi3/JavaScript/JSTips/Mozilla/
-  // _dom : kind of DOM.
-  //        IE4 = 1, IE5+ = 2, NN4 = 3, NN6+ = 4, others = 0
-  _dom = document.all?(document.getElementById?2:1)
-                     :(document.getElementById?4
-                     :(document.layers?3:0));
-  var _calendar3_popElement = null;
-  var _calendar3_popCount = 0;
+<link rel="index" href="/wiki/index.rb" />
+<meta name="generator" content="VikiWiki 1.8.7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<meta name="Author" content="ASAI Etsuhisa" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="javascript" />
+<link rel="stylesheet" type="text/css" href="/wiki/theme/ashiya/ashiya.css" />
+<link rev="made" href="mailto:" />
 
-  if (document.compatMode){
-    if (_dom==2 && document.compatMode=="CSS1Compat") _dom = 2.5;
-  } // Win IE6
-
-  function getLeft(div){
-    result = 0;
-    while (1){
-      div = div.offsetParent;
-      result += div.offsetLeft;
-      if (div.tagName=="BODY") return result;
-    }
-  }
-
-  function getTop(div){
-    result = 0;
-    while (1){
-      div = div.offsetParent;
-      result += div.offsetTop;
-      if (div.tagName=="BODY") return result;
-    }
-  }
-
-  function moveDivTo(div,left,top){
-    if(_dom==4){
-      div.style.left=left+'px';
-      div.style.top =top +'px';
-      return;
-    }
-    if(_dom==2.5 || _dom==2 || _dom==1){
-      div.style.pixelLeft=left;
-      div.style.pixelTop =top;
-      return;
-    }
-    if(_dom==3){
-      div.moveTo(left,top);
-      return;
-    }
-  }
-
-  function moveDivBy(div,left,top){
-    if(_dom==4){
-      div.style.left=div.offsetLeft+left;
-      div.style.top =div.offsetTop +top;
-      return;
-    }
-    if(_dom==2.5 || _dom==2){
-      div.style.pixelLeft=div.offsetLeft+left;
-      div.style.pixelTop =div.offsetTop +top;
-      return;
-    }
-    if(_dom==1){
-      div.style.pixelLeft+=left;
-      div.style.pixelTop +=top;
-      return;
-    }
-    if(_dom==3){
-      div.moveBy(left,top);
-      return;
-    }
-  }
-
-  function getDivLeft(div){
-    if(_dom==2.5) return div.offsetLeft+getLeft(div);
-    if(_dom==4 || _dom==2) return div.offsetLeft;
-    if(_dom==1)            return div.style.pixelLeft;
-    if(_dom==3)            return div.left;
-    return 0;
-  }
-
-  function getDivTop(div){
-    if(_dom==2.5) return div.offsetTop+getTop(div);
-    if(_dom==4 || _dom==2) return div.offsetTop;
-    if(_dom==1)            return div.style.pixelTop;
-    if(_dom==3)            return div.top;
-    return 0;
-  }
-
-  function getDivWidth (div){
-    if(_dom==4 || _dom==2.5 || _dom==2) return div.offsetWidth;
-    if(_dom==1)            return div.style.pixelWidth;
-    if(_dom==3)            return div.clip.width;
-    return 0;
-  }
-
-  function getDivHeight(div){
-    if(_dom==4 || _dom==2.5 || _dom==2) return div.offsetHeight;
-    if(_dom==1)            return div.style.pixelHeight;
-    if(_dom==3)            return div.clip.height;
-    return 0;
-  }
-
-  function popup(target,element,notitle) {
-    _calendar3_popCount++;
-    popdownNow();
-    if (navigator.appName=='Microsoft Internet Explorer') {
-      moveDivTo(element,getDivLeft(target)+getDivWidth(target),getDivTop(target)+getDivHeight(target)*13/8);
-    } else {
-      moveDivTo(element,getDivLeft(target)+getDivWidth(target)/2,getDivTop(target)+(getDivHeight(target)*2)/3);
-    }
-    element.style.display="block";
-    notitle.title="";
-  }
-
-  function popdown(element) {
-    _calendar3_popElement=element;
-    setTimeout('popdownDelay()', 2000);
-  }
-
-  function popdownDelay() {
-    _calendar3_popCount--;
-    if (_calendar3_popCount==0) {
-      popdownNow();
-    }
-  }
-
-  function popdownNow() {
-    if (_calendar3_popElement!=null) {
-      _calendar3_popElement.style.display="none";
-      _calendar3_popElement=null;
-    }
-  }
-  // -->
+<title>VikiWiki - FrontPage</title>
+<script src="http://www.google-analytics.com/urchin.js"
+type="text/javascript">
 </script>
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://jijixi.azito.com/diary/index.rdf">
-	<meta name="robots" content="noindex,follow">
+<script type="text/javascript">
+_uacct = "UA-568279-1";
+urchinTracker();
+</script>
 </head>
+
 <body>
-
-
-<div class="adminmenu">
-<span class="adminmenu"><a href="http://jijixi.azito.com/jijixi/">е╚е├е╫</a></span>
-<span class="adminmenu"><a href="./index.rb?date=20101115-3">&laquo;┴░3╞№╩м</a></span>
-<span class="adminmenu"><a href="update.rb" rel="nofollow">─╔╡н</a></span>
-</div>
-<h1>д╕д╕дгд╬╞№╡нбве─е├е│е▀▓─</h1>
-<p>
-Twitter: @jijixi_org<br />
-Xbox Live: jijixi
-</p>
-<div style="text-align: right;">
-<a href="http://jijixi.azito.com/cgi-bin/diary/index.rb?date=19700102">╜щ┐┤╝╘дм╜ёддд┐ OCaml ╞■╠ч</a><br>
-<a href="http://jijixi.azito.com/cgi-bin/diary/index.rb?date=19700201">Spotlight tips е╡еде╚╞теъеєеп╜╕</a>
-</div>
-<div class="calendar">
-<div class="year">1970|<a href="./index.rb?date=197001">01</a>|<a href="./index.rb?date=197002">02</a>|</div>
-<div class="year">2003|<a href="./index.rb?date=200310">10</a>|<a href="./index.rb?date=200311">11</a>|<a href="./index.rb?date=200312">12</a>|</div>
-<div class="year">2004|<a href="./index.rb?date=200401">01</a>|<a href="./index.rb?date=200402">02</a>|<a href="./index.rb?date=200403">03</a>|<a href="./index.rb?date=200404">04</a>|<a href="./index.rb?date=200405">05</a>|<a href="./index.rb?date=200406">06</a>|<a href="./index.rb?date=200407">07</a>|<a href="./index.rb?date=200408">08</a>|<a href="./index.rb?date=200409">09</a>|<a href="./index.rb?date=200410">10</a>|<a href="./index.rb?date=200411">11</a>|<a href="./index.rb?date=200412">12</a>|</div>
-<div class="year">2005|<a href="./index.rb?date=200501">01</a>|<a href="./index.rb?date=200502">02</a>|<a href="./index.rb?date=200503">03</a>|<a href="./index.rb?date=200504">04</a>|<a href="./index.rb?date=200505">05</a>|<a href="./index.rb?date=200506">06</a>|<a href="./index.rb?date=200507">07</a>|<a href="./index.rb?date=200508">08</a>|<a href="./index.rb?date=200509">09</a>|<a href="./index.rb?date=200510">10</a>|<a href="./index.rb?date=200511">11</a>|<a href="./index.rb?date=200512">12</a>|</div>
-<div class="year">2006|<a href="./index.rb?date=200601">01</a>|<a href="./index.rb?date=200602">02</a>|<a href="./index.rb?date=200603">03</a>|<a href="./index.rb?date=200604">04</a>|<a href="./index.rb?date=200605">05</a>|<a href="./index.rb?date=200606">06</a>|<a href="./index.rb?date=200607">07</a>|<a href="./index.rb?date=200608">08</a>|<a href="./index.rb?date=200609">09</a>|<a href="./index.rb?date=200610">10</a>|<a href="./index.rb?date=200611">11</a>|<a href="./index.rb?date=200612">12</a>|</div>
-<div class="year">2007|<a href="./index.rb?date=200701">01</a>|<a href="./index.rb?date=200702">02</a>|<a href="./index.rb?date=200703">03</a>|<a href="./index.rb?date=200704">04</a>|<a href="./index.rb?date=200705">05</a>|<a href="./index.rb?date=200706">06</a>|<a href="./index.rb?date=200707">07</a>|<a href="./index.rb?date=200708">08</a>|<a href="./index.rb?date=200709">09</a>|<a href="./index.rb?date=200710">10</a>|<a href="./index.rb?date=200711">11</a>|<a href="./index.rb?date=200712">12</a>|</div>
-<div class="year">2008|<a href="./index.rb?date=200801">01</a>|<a href="./index.rb?date=200802">02</a>|<a href="./index.rb?date=200803">03</a>|<a href="./index.rb?date=200804">04</a>|<a href="./index.rb?date=200805">05</a>|<a href="./index.rb?date=200806">06</a>|<a href="./index.rb?date=200807">07</a>|<a href="./index.rb?date=200808">08</a>|<a href="./index.rb?date=200809">09</a>|<a href="./index.rb?date=200810">10</a>|<a href="./index.rb?date=200811">11</a>|<a href="./index.rb?date=200812">12</a>|</div>
-<div class="year">2009|<a href="./index.rb?date=200901">01</a>|<a href="./index.rb?date=200902">02</a>|<a href="./index.rb?date=200903">03</a>|<a href="./index.rb?date=200904">04</a>|<a href="./index.rb?date=200905">05</a>|<a href="./index.rb?date=200906">06</a>|<a href="./index.rb?date=200907">07</a>|<a href="./index.rb?date=200908">08</a>|<a href="./index.rb?date=200909">09</a>|<a href="./index.rb?date=200910">10</a>|<a href="./index.rb?date=200911">11</a>|<a href="./index.rb?date=200912">12</a>|</div>
-<div class="year">2010|<a href="./index.rb?date=201001">01</a>|<a href="./index.rb?date=201002">02</a>|<a href="./index.rb?date=201003">03</a>|<a href="./index.rb?date=201004">04</a>|<a href="./index.rb?date=201005">05</a>|<a href="./index.rb?date=201006">06</a>|<a href="./index.rb?date=201007">07</a>|<a href="./index.rb?date=201008">08</a>|<a href="./index.rb?date=201011">11</a>|</div>
-<div class="year">2011|<a href="./index.rb?date=201105">05</a>|</div>
-<div class="year">2012|<a href="./index.rb?date=201201">01</a>|</div>
-</div>
-
-<hr class="sep">
-
-
-	
-<div class="day">
-<h2><span class="date">
-<a href="./index.rb?date=20120125">2012-01-25</a>
-</span> 
-<span class="title"></span> <span class="nyear">[<a href="./index.rb?date=0125" title="─╣╟п╞№╡н">─╣╟п╞№╡н</a>]</span></h2>
-
+<div align="center">
+<script type="text/javascript">
+<!--
+google_ad_client = "pub-2467608495925250";
+google_ad_width = 728;
+google_ad_height = 15;
+google_ad_format = "728x15_0ads_al";
+google_ad_channel = "";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+      </div>
+      
+<div class="main">
 <div class="body">
+  <!--  уГКуГУуВ▓уГ╝уВ╖уГзуГ│уГРуГ╝ -->
+  <div class="adminmenu">
+    <p><a href="/wiki/index.rb?e=EditPage&amp;p=FrontPage">ч╖ищЫЖ</a>
+    <a href="/wiki/index.rb?r=HistoryPage">х▒ецн┤</a>
+    <a href="/wiki/index.rb">уГИуГГуГЧ</a>
+    <a href="/wiki/index.rb?p=SearchPage">цдЬч┤в</a>
+    <a href="/wiki/index.rb?p=SWikiStyleHelpPage">уГШуГлуГЧ</a>
+    <a href="/wiki/index.rb?p=AdminPage">чобчРЖ</a>
+    <a href="/wiki/rss.xml">RSS</a></p>
+  </div>
+  <!--  уВ┐уВдуГИуГл -->
+  <div class="title">
+<h1>FrontPage</h1>
+    <!--  #title alias(page) -->
+  </div>
+  <!--  уГЪуГ╝уВ╕уБохЖЕхо╣ -->
+  <div class="section">
+<h2> уБУуВМуБпф╜ХуБЛ</h2>
+<p><a href="http://ashitani.jp/">уБВуБЧуБЯуБл</a>уБох╛ох░СуБкшиШцЖ╢хо╣щЗПуВТшгЬуБЖуГбуГвуБзуБЩуАВ</p>
 
-<div class="section">
-
-<h3><a href="./index.rb?date=20120125#p01"><span class="sanchor">%</span></a> [<a href="./index.rb?year=2012;category=objc">objc</a>] ARC д╬║╟┼м▓╜е╨е░дщд╖дндтд╬дЄ╞здєд└╖я</h3>
-<p>
--O0д└д╚╠ф┬ъ╠╡ддд╬д╦║╟┼м▓╜дмекеєд└д╚╗▓╛╚ележеєе╚дмдкдлд╖дпд╩дые▒б╝е╣дмдвдыдшджд└бг
-iOSе╖е▀ехеьб╝е┐д╟дт╝┬╡бд╟дт╞▒д╕дшджд╦═юд┴дыбгMac OS X д└д╚д╔джд╩дыдлд╧╠д│╬╟збг
-─┤д┘дыд╬дсдєд╔дпд╡дддлдщ┤√├╬д╬╠ф┬ъд╩д╬длд╧├╬дщд╩ддбг
-д╜д╬╩╒╛▄д╖дд┐═д╟бвдтд╖╠д├╬д╬е╨е░д└дшд├д╞д│д╚д╩дщ╩є╣Ёд╖д╞дкддд╞дпдьдыд╚┤Єд╖дддлдтбг
-д╔д│д╦╩є╣Ёд╣дъдуддддд╬длдядлдщдєд╖бг</p>
-<p>┤─╢нд╧Xcode 4.2.1 + iOS SDK 5д╟бв║╞╕╜е│б╝е╔д╧░╩▓╝д╬дшджд╩┤╢д╕бг</p>
-<pre>
-+ (NSArray *)arrayForTestWithObject:(id)element {
-    NSArray *aResult = nil;
-    @autoreleasepool {
-        NSArray *a = [NSArray arrayWithObjects:element, nil];
-        if (rand() &gt; 0) { // (1)
-            aResult = [a mutableCopy];
-        }
-    }
-    return aResult;
-}
-
-- (NSArray *)arrayForTest {
-    return [[self class] arrayForTestWithObject:@"hoge"]; // (2)
-}
-
-- (void)testARC {
-    NSArray *a = [self arrayForTest];
-    NSLog(@"%@", a);
-}
-</pre>
-<p>┼м┼Ўд╩д╚д│дэд╦д│дьдЄе│е╘е┌д╖д╞║╟┼м▓╜екеєд╬╛ї┬╓д╟ (Releaseе╙еые╔д╦д╣дыд╚╝ъд├╝шдъ┴сдд) testARC есе╜е├е╔дЄ╕╞д╓д╚ (2) д╬д╚д│дэд╟═юд┴дыбг
-е╖е▀ехеьб╝е┐д╟ Enable Zombie Objects дЄ ON д╦д╖д╞дддьд╨бв</p>
-<pre>
-*** -[__NSArrayM retain]: message sent to deallocated instance 0x6b2c060
-</pre>
-<p>еэе░д╦д│дєд╩д╬дм╜╨╬╧д╡дьдыд╧д║бг</p>
-<p>arrayForTestWithObject: ╞тд╟ aResult д╬╗▓╛╚┐Їд╬─┤└░дмдкдлд╖д╩д│д╚д╦д╩д├д╞ддды╠╧══бг
-(1)д╬д╚д│дэдм┤╬дщд╖дпбв╬удид╨д│д│д╬╛Є╖ядЄ YES (╛яд╦┐┐) д╦д╖д┐дъд╣дыд╚═юд┴д╩дпд╩дыбг
-if дЄ╝шд├╩зд├д╞дт╞▒д╕дшджд╦═юд┴д╩ддбг
-д╡дщд╦бв@autoreleasepool е╓еэе├епдЄ╝шд├╩здид╨╠ф┬ъд╧╡пднд╩ддд╬д╟бв@autoreleasepool д╬├цд╟╛Є╖яд╦дшд├д╞╩╤┐Їд╦еве╡едеєд╖д┐дъд╖д╩длд├д┐дъд├д╞д│д╚дмдвдыд╚┤э╕▒д▌ддбг</p>
-<p>д╜дєд╩д│дєд╩д╟╚╛╞№─┘дьд┐║г╞№д╟двд├д┐бг</p>
-<p>д┴д╩д▀д╦бв╛х╡нд╬╬уд╟╕└джд╚╩╤┐Ї═╤░╒д╖д╞дкддд╞д╔джд╬д╩дєд╞д│д╚д╧д╗д║д╦бвддднд╩дъreturnд╖д╞д╖д▐дид╨╠ф┬ъд╩длд├д┐дъд╣дыбг</p>
-<pre>
-+ (NSArray *)arrayForTestWithObject:(id)element {
-    @autoreleasepool {
-        NSArray *a = [NSArray arrayWithObjects:element, nil];
-        if (rand() &gt; 0) {
-            return [a mutableCopy]; // (3)
-        }
-    }
-    return nil;
-}
-</pre>
-<p>(3)д╬╔Ї╩мбв@autoreleasepool д└д╚д│дж╜ёд▒дыд╬д╟│┌д└д╖бв╛х╡нд╬╠ф┬ъд╬д│д╚дЄ╣═дидьд╨дрд╖дэд│дж╜ёддд┐╩¤дмдддддєд└дэджд═бг
-д▐двбв║г▓єд╧╕╡б╣╝л╩мд╟NSAutoreleasePoolдЄ╗╚д├д╞д┐е│б╝е╔дЄе│еєе╨б╝е╚д╖д┐дтд╬д└д├д┐длдщбвд│дждддж╗Ў┬╓д╦д╩д├д┐дєд└д▒д╔бг</p>
-<p>(─╔╡н 2012/3/30)</p>
-<p>Xcode 4.3.2 д╟─╔╗юд╖д┐д╚д│дэ╛х╡н (3) д╬╬уд╟дте└есд╩д╬дЄ│╬╟збг
-┼Ў╗■┤к░уддд╖д╞ддд┐д╬длбвд╜д╬╕х╛ї╢╖дм╩╤дяд├д┐д╬длд╧╔╘╠└д└дмбв╕╜╛їд╟д╧╛Є╖яд╦дшд├д╞nilд╦д╩дъ╞└ды├═дЄ╩╓д╖д┐дд╗■д╧ @autoreleasepool е╓еэе├епдЄ╚Єд▒д┐╩¤дм╬╔д╡д╜джбг
-д█дєд╚д╦д╔джд╖д╞дт @autoreleasepool дм╗╚дид╩ддд╚║ддыд├д╞╛ь╣чд╦д╧░╩▓╝д╬дшджд╩д│д╚дЄд╣дьд╨░ь▒■▓є╚Єд╟дндыд├д▌ддбг
-дддлд╦дт╛щ─╣д╟д╖длдтеве█д├д▌ддд▒д╔бг</p>
-<pre>
-+ (NSArray *)arrayForTestWithObject:(id)element { // (4)
-    NSArray *aResult = nil;
-    @autoreleasepool {
-        NSArray *a = [NSArray arrayWithObjects:element, nil];
-        if (rand() &gt; 0) {
-            aResult = [a mutableCopy];
-        }
-    }
-    return ([aResult isKindOfClass:[NSArray class]] ? aResult : nil); // (5)
-}
-</pre>
-<p>╔╘╗╫╡─д╩д│д╚д╦бв(5) д╬╛Є╖ядЄд┐д└д╬ nil е┴езе├епд└д▒д╦д╣дыд╚е└есбгд╚д╦длдп▓┐длесе╜е├е╔╕╞дєд╟дьд╨длд▐дяд╩ддд╬длдтд╖дьд╩ддд╬д╟бвдтдж╛пд╖еве█д├д▌дп╕лдид╩дде└е▀б╝╡н╜╥дЄ╣═дид┐╩¤дмдддддлдтд╖дьд╩ддбг</p>
-<pre>
-NSLog(@"%@", aResult);
-return aResult;
-</pre>
-<p>д╩дєд╞д╬д╟дт╬╔длд├д┐бгд╥д╔ддд╩гў</p>
-<p>(/─╔╡н)</p>
-<p>(─╔╡н 2013/1/18)</p>
-<p>Xcode 4.5.2 + iOS SDK 6.0 д╟д╧─╛д├д╞ды╠╧══бг</p>
-<p>(/─╔╡н)</p>
-
-</div>
-
-
-</div>
-
-<div class="comment">
-
-	<div class="caption">[<a href="./index.rb?date=20120125#c">е─е├е│е▀дЄ╞■дьды</a>]</div>
-</div>
-
-
-
-
-
-
-
-
-</div>
-
-
-	<hr class="sep">
-	
-<div class="day">
-<h2><span class="date">
-<a href="./index.rb?date=20110526">2011-05-26</a>
-</span> 
-<span class="title"></span> <span class="nyear">[<a href="./index.rb?date=0526" title="─╣╟п╞№╡н">─╣╟п╞№╡н</a>]</span></h2>
-
-<div class="body">
-
-<div class="section">
-
-<h3><a href="./index.rb?date=20110526#p01"><span class="sanchor">%</span></a> [<a href="./index.rb?year=2012;category=objc">objc</a>] д│д├д╜дъ╟жд╙┤єды╠д╜щ┤№▓╜╩╤┐Їд╬цл</h3>
-<p>░╩┴░ iOS еве╫еъд╬│л╚пд╟д│дєд╩д│д╚дЄ╜ёддд╞е╧е▐д├д┐д│д╚дмдвдыбг</p>
-<pre>
-return self.someView.frame.size.height;
-</pre>
-<p>someView е╫еэе╤е╞ег (UIView д╬е╡е╓епеще╣д╬▓┐дл) д╦д╧▓┐дт╞■д├д╞ддд╩дд╛ь╣чдмдвдыдєд└дмбвд╜д╬╛ь╣чбв║╟╜щд╧ 0 дЄ╩╓д╣дтд╬д╬д╖д╨дщдпд╣дыд╚╩╤д╩├═дЄ╩╓д╖╗╧дсдыбг
-е╟е╨е├е░┤─╢нд└д╚д╩длд╩длд╜д╬╕╜╛▌дм╜╨д╩ддд╬д╟╕╢░°д╬╞├─ъд╦╞ё╡╖д╖д┐дєд└дмбвдядлд├д╞д╖д▐дид╨б╓двдвд╜дждлбвд╩дєд╟╡дд┼длд╩длд├д┐дєд└б╫д╚дддж╧├бг</p>
-<p>Objective-C д╟д╧ nil д╦┬╨д╣дыесе├е╗б╝е╕ (есе╜е├е╔╕╞д╙╜╨д╖) д╧▓┐дт╡пд│дщд║ nil дм╩╓дыд│д╚д╦д╩д├д╞дддыд╬д╟бв╞├д╦еиещб╝дЄ╜╨д╣╔м═╫дм╠╡дд╛ь╣чд╦д╧д─дд nil длд╔дждлд╬е┴езе├епдЄ╛╩╬мд╖д╞д╖д▐дждєд└дмбв╛х╡нд╬дшджд╩╛ь╣чд╦д╧д╜дьдм╡╪д╦д╩дыбг</p>
-<p>UIView д╬ frame е╫еэе╤е╞егд╬╖┐д╧ CGRect д╟бвд│дьд╧еке╓е╕езепе╚д╟д╧д╩дп╣╜┬д┬╬д╟двдыбг
-╣╜┬д┬╬д╦┤╪д╖д╞д╧ C д╜д╬дтд╬д╚╣═дид╞ддддбг
-д─д▐дъ╛х╡нд╬дшджд╩е│б╝е╔д╧╝┬║▌д╦д╧░╩▓╝д╬дшджд╩╜ш═¤д╬╬одьд╦д╩д├д╞ддды (д╚╗╫дядьды)бг</p>
-<pre>
-UIView *aView = [self someView];
-CGRect frame = [aView frame];
-return frame.size.height;
-</pre>
-<p>aView дм nil д╬╛ь╣чбвframe д╦д╧ nil дм┬х╞■д╡дьдыд╬д└дэджбг
-д╜джд└д╚д╣дьд╨┼Ў┴│д╜дьд╧ CGRect д╬╜щ┤№▓╜д╚д╖д╞д╧╔╘╜╜╩мд╟бвд╜д╬╖ы▓╠бвдвды─°┼┘есетеъ╬╬░шдм▒°дьд╞дпдыд╚е┤е▀├═дм╞■д├д╞дпдыд╬д╟ return д╡дьды├═дмдкдлд╖дпд╩дыбг
-C д╬╖╨╕│дмдвды─°┼┘двдьд╨┼Ўд┐дъ┴░д╬╡є╞░д╟д╧двдыдмбвд╜джд╟д╩дд╛ь╣чд╦д╧д╡д├д╤дъ░╒╠гдмдядлдщд╩дддлдтд╖дьд╩ддбг
-дфд├д╤дъ Objective-C дЄ╗╚дж┐═д╧ C дт╔м╜дд╦д╖д┐╩¤дмдддддєд╕дуд╩дддлбг</p>
-
-</div>
-
-
-</div>
-
-<div class="comment">
-
-	<div class="caption">[<a href="./index.rb?date=20110526#c">е─е├е│е▀дЄ╞■дьды</a>]</div>
-</div>
-
-
-
-
-
-
-
-
-</div>
-
-
-	<hr class="sep">
-	
-<div class="day">
-<h2><span class="date">
-<a href="./index.rb?date=20110514">2011-05-14</a>
-</span> 
-<span class="title"></span> <span class="nyear">[<a href="./index.rb?date=0514" title="─╣╟п╞№╡н">─╣╟п╞№╡н</a>]</span></h2>
-
-<div class="body">
-
-<div class="section">
-
-<h3><a href="./index.rb?date=20110514#p01"><span class="sanchor">%</span></a> [<a href="./index.rb?year=2012;category=game">game</a>] Condemned 2 City Museum ┴▄║║╣╢╬м</h3>
-<p>д│д│д└д▒е┤б╝еые╔дм╝шдьд╞д╩длд├д┐дмбвдшдждфдп▓┐д╚длд╩д├д┐д╬д╟есетбг</p>
+<h2>  цЪлхоЪуГбуГвуГ╗уВИуБПф╜┐уБЖуВВуБо</h2>
 <ul>
-<li>3 Did you find any fingerprints on the paper?</li>
-<li>1 Do you think Vanhorn nursed his nephew back to health?</li>
-<li>2 What about the saw? You said it looked medieval?</li>
+<li> <a href="/wiki/index.rb?p=%E3%83%91%E3%83%BC%E3%82%BD%E3%83%8A%E3%83%AB%E3%83%95%E3%82%A1%E3%83%96%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">уГСуГ╝уВ╜уГКуГлуГХуВбуГЦуГкуВ▒уГ╝уВ╖уГзуГ│</a></li>
+<li> <a href="/wiki/index.rb?p=SpeedCubing">SpeedCubing</a></li>
+<li> <a href="/wiki/index.rb?p=unity">unity</a></li>
+<li> <a href="/wiki/index.rb?p=ubuntu">ubuntu</a></li>
 </ul>
+
+<h2> шЗкф╜ЬуВвуГЧуГк</h2>
 <ul>
-<li>Camera ID 1501</li>
+<li> <a href="/wiki/index.rb?p=sixamobbs">sixamobbs</a> / <a href="/wiki/index.rb?p=SwikiStyle">SwikiStyle</a> / <a href="/wiki/index.rb?p=samidare_plus">samidare_plus</a> / <a href="/wiki/index.rb?p=samidare_plus%E9%96%8B%E7%99%BA%E3%83%A1%E3%83%A2">samidare_plusщЦЛчЩ║уГбуГв</a>уАА</li>
+<li> <a href="/wiki/index.rb?p=Today%27sShuffle">Today'sShuffle</a> / <a href="/wiki/index.rb?p=Nile">Nile</a> /<a href="/wiki/index.rb?p=SurfTrack">SurfTrack</a> /<a href="/wiki/index.rb?p=dgraphviz">dgraphviz</a></li>
+<li> <a href="/wiki/index.rb?p=RubyVST">RubyVST</a></li>
 </ul>
+
+<h2>  уВ╜уГХуГИуВжуВзуВв</h2>
 <ul>
-<li>Medieval Tools 13A (елесещд╬▒╟┴№дЄ│╬╟зд╖д┐╕хд╦┼╕╝и╝╝д╬│м├╩╔╒╢сд╦░╞╞т┤╟╚─дмдвдыд╬д╟д╜дьдЄ─┤д┘ды)</li>
+<li> <a href="/wiki/index.rb?p=Windows">Windows</a> / <a href="/wiki/index.rb?p=Unix%2FLinux">Unix/Linux</a> / <a href="/wiki/index.rb?p=MacOSX">MacOSX</a> / <a href="/wiki/index.rb?p=Windows%E4%B8%8A%E3%81%AELinux">Windowsф╕КуБоLinux</a> / <a href="/wiki/index.rb?p=ChromeOS">ChromeOS</a></li>
+<li> <a href="/wiki/index.rb?p=Apollo">Apollo</a>/ <a href="/wiki/index.rb?p=DDNS">DDNS</a> / <a href="/wiki/index.rb?p=VST">VST</a> / <a href="/wiki/index.rb?p=Android">Android</a> / <a href="/wiki/index.rb?p=unity">unity</a> / <a href="/wiki/index.rb?p=%E3%81%9D%E3%81%AE%E4%BB%96%E3%82%BD%E3%83%95%E3%83%88">уБЭуБоф╗ЦуВ╜уГХуГИ</a> </li>
 </ul>
+
+<h2>  уГПуГ╝уГЙуВжуВзуВв</h2>
 <ul>
-<li>1 Any evidence the metal pieces came from Rachael Mars's body?</li>
+<li> <a href="/wiki/index.rb?p=%E9%9B%BB%E6%B0%97%E5%B7%A5%E5%AD%A6%E4%B8%80%E8%88%AC">щЫ╗ц░Чх╖ехнжф╕АшИм</a> / <a href="/wiki/index.rb?p=CAD">CAD</a> / <a href="/wiki/index.rb?p=HDL">HDL</a> / <a href="/wiki/index.rb?p=%E7%84%A1%E7%B7%9ALAN">чДбч╖ЪLAN</a> / <a href="/wiki/index.rb?p=ThnikPad560X">ThnikPad560X</a> /<a href="/wiki/index.rb?p=Arduino">Arduino</a> /<a href="/wiki/index.rb?p=MacBookPro">MacBookPro</a></li>
+<li> <a href="/wiki/index.rb?p=%E3%83%91%E3%83%BC%E3%82%BD%E3%83%8A%E3%83%AB%E3%83%95%E3%82%A1%E3%83%96%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">уГСуГ╝уВ╜уГКуГлуГХуВбуГЦуГкуВ▒уГ╝уВ╖уГзуГ│</a></li>
 </ul>
-<p>╞мд╬┐Ї╗·д╧┴к┬Є╗шд╬░╠├╓бг
-13A д╬┤╟╚─д╬┬╕║▀д╦╡д╔╒длд╩длд├д┐д╗ддд╟║гд▐д╟ Perfect дм╝шдьд╞д╩длд├д┐бг
-░╠├╓┼кд╦╕л╞ид╖дфд╣ддд╖бв╠╡╗ыд╖д╞дт╧├дм┐╩дрд╬дм╖ы╣╜цлбг</p>
-<p>д┴д╩д▀д╦╖┘╚ў░ўдЄ╗жд╡д╩дддшджд╦д╣дые▀е├е╖ечеєд╧бв╝л╩мдм╗жд╡д╩д▒дьд╨ддддд└д▒д╩д╬д╟╝┘╦тд╩╛ь╣чд╧┼е╦└д┐д┴д╦╗╧╦Ўд╖д╞дтдщджд╚╬╔ддбг</p>
 
+<h2>  чФЯц┤╗уГбуГв</h2>
+<ul>
+<li> <a href="/wiki/index.rb?p=%E3%81%82%E3%81%97%E3%81%9F%E3%81%AB%E3%82%B0%E3%83%AB%E3%83%A1">уБВуБЧуБЯуБлуВ░уГлуГб</a> / <a href="/wiki/index.rb?p=%E6%9B%B8%E5%BA%97">цЫ╕х║Ч</a> / <a href="/wiki/index.rb?p=%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%AA">уВ╣уВ┐уВ╕уВк</a> / <a href="/wiki/index.rb?p=%E6%84%9F%E6%83%B3">цДЯцГ│</a></li>
+</ul>
+
+<h2>  уБЭуБоф╗ЦуВ╕уГгуГ│уГлчДбуБЧ</h2>
+<ul>
+<li> <a href="/wiki/index.rb?p=%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F%E3%81%84%E3%83%84%E3%83%BC%E3%83%AB">шйжуБЧуБжуБ┐уБЯуБДуГДуГ╝уГл</a>  / <a href="/wiki/index.rb?p=%E3%83%9E%E3%82%B6%E3%83%9C%E8%B2%B7%E3%81%84%E6%8F%9B%E3%81%88%E6%A4%9C%E8%A8%8E">уГЮуВ╢уГЬш▓╖уБДцПЫуБИцдЬшиО</a> / <a href="/wiki/index.rb?p=%E3%81%84%E3%82%8D%E3%82%93%E3%81%AA%E6%88%A6%E9%9A%8A">уБДуВНуВУуБкцИжщЪК</a> / <a href="/wiki/index.rb?p=GPL">GPL</a></li>
+<li> <a href="/wiki/index.rb?p=%E3%82%B3%E3%83%BC%E3%83%89">уВ│уГ╝уГЙ</a></li>
+</ul>
+  </div>
+  <!--  уГХуГГуВ┐уГ╝ -->
+  <div class="footer">
+    <hr />
+<address>
+Generated by  <a href="http://www14.org1.com/~mopia/dynamic/vikiwiki.cgi">VikiWiki</a> version 1.8.7<br />
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 2.1.0<br />
+</address>
+  </div>
 </div>
-
-
-</div>
-
-<div class="comment">
-
-	<div class="caption">[<a href="./index.rb?date=20110514#c">е─е├е│е▀дЄ╞■дьды</a>]</div>
-</div>
-
-
-
-
-
-
-
-
-</div>
-
-
-	<hr class="sep">
-
-<div class="adminmenu">
-<span class="adminmenu"><a href="http://jijixi.azito.com/jijixi/">е╚е├е╫</a></span>
-<span class="adminmenu"><a href="./index.rb?date=20101115-3">&laquo;┴░3╞№╩м</a></span>
-<span class="adminmenu"><a href="update.rb" rel="nofollow">─╔╡н</a></span>
-</div>
-<div style="text-align: right;">
-<p>╞№╡нд├д╞д╬д╧╦▄═шбв╝л╩мд╟╞╔д▀╩╓д╣д┐дсд╦двдыдтдєд└дшд╩двб─б─<br>
-дтд╖дпд╧═н╠╛┐═д╦д╩д├д┐дщ╗р╕хд╦╦▄д╦д╩д├д┐дъд╚длдлбй</p>
-<p><a href='http://jijixi.azito.com/diary/index.rdf'>RSS д╧д│д┴дщ</a></p>
-<!-- 0.0.0.0 -->
-<p>jijixi at azito.com</p>
-</div>
-
-
-
-
-<div class="footer">
-Generated by <a href="http://www.tdiary.org/">tDiary</a> version 2.2.0<br>
-Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.8.1
 </div>
 </body>
 </html>
