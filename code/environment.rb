@@ -1,107 +1,120 @@
-# Be sure to restart your server when you modify this file.
+RAILS_ROOT = File.dirname(__FILE__) + "/../"
+RAILS_ENV  = ENV['RAILS_ENV'] || 'production'
 
-# Uncomment below to force Rails into production mode when
-# you don't control web/app server and can't set it the proper way
-# ENV['RAILS_ENV'] ||= 'production'
 
-# Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.3' unless defined? RAILS_GEM_VERSION
+# Mocks first.
+ADDITIONAL_LOAD_PATHS = ["#{RAILS_ROOT}/test/mocks/#{RAILS_ENV}"]
 
-# Bootstrap the Rails environment, frameworks, and default configuration
-require File.join(File.dirname(__FILE__), 'boot')
+# Then model subdirectories.
+ADDITIONAL_LOAD_PATHS.concat(Dir["#{RAILS_ROOT}/app/models/[_a-z]*"])
+ADDITIONAL_LOAD_PATHS.concat(Dir["#{RAILS_ROOT}/components/[_a-z]*"])
 
-Rails::Initializer.run do |config|
-  gitorious_yaml = YAML.load_file(File.join(RAILS_ROOT, "config/gitorious.yml"))[RAILS_ENV]
-  raise "Your config/gitorious.yml does not have an entry for your current Rails environment. Please consult config/gitorious.sample.yml for instructions." unless gitorious_yaml
+# Followed by the standard includes.
+ADDITIONAL_LOAD_PATHS.concat %w(
+  app 
+  app/models 
+  app/controllers 
+  app/helpers 
+  app/apis 
+  components 
+  config 
+  lib 
+  vendor 
+  vendor/rubypants
+  vendor/redcloth/lib
+  vendor/bluecloth/lib
+  vendor/flickr
+  vendor/syntax/lib
+  vendor/sparklines/lib
+  vendor/uuidtools/lib
+  vendor/rails/railties
+  vendor/rails/railties/lib
+  vendor/rails/actionpack/lib
+  vendor/rails/activesupport/lib
+  vendor/rails/activerecord/lib
+  vendor/rails/actionmailer/lib
+  vendor/rails/actionwebservice/lib
+).map { |dir| "#{RAILS_ROOT}/#{dir}" }.select { |dir| File.directory?(dir) }
 
-  # Settings in config/environments/* take precedence over those specified here.
-  # Application configuration should go into files in config/initializers
-  # -- all .rb files in that directory are automatically loaded.
-  # See Rails::Configuration for more options.
+# Prepend to $LOAD_PATH
+ADDITIONAL_LOAD_PATHS.reverse.each { |dir| $:.unshift(dir) if File.directory?(dir) }
 
-  # Skip frameworks you're not going to use. To use Rails without a database
-  # you must remove the Active Record framework.
-  # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
+# Load included libraries.
+require 'redcloth' 
+require 'bluecloth' 
+require 'rubypants' 
+require 'flickr'
+require 'uuidtools'
 
-  # Specify gems that this application depends on. 
-  # They can then be installed with "rake gems:install" on new installations.
-  # You have to specify the :lib option for libraries, where the Gem name (sqlite3-ruby) differs from the file itself (sqlite3)
-  # config.gem "bj"
-  # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
-  # config.gem "sqlite3-ruby", :lib => "sqlite3"
-  # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem "chronic"
-  config.gem "geoip"
-  config.gem "daemons",      :lib => false
-  config.gem "hoe",          :lib => false
-  config.gem "echoe",        :lib => false
-  config.gem 'ruby-yadis', :lib => 'yadis'
-#  config.gem "RedCloth",     :lib => "redcloth"
-  config.gem "ruby-openid",  :lib => "openid"
-  config.gem "rdiscount",    :version => "1.3.1.1"
-  config.gem 'stomp',        :version => "1.1"
-  config.gem "mime-types", :lib => 'mime/types'
-  config.gem "diff-lcs", :lib => 'diff/lcs'
-  if RUBY_VERSION < '1.9'
-    config.gem 'json'
-  end
-  
-  # vendorized directly in vendor/ -- need to research if can be removed from there
-  #config.gem "ultraviolet",  :version => '0.10.2', :lib => "uv"
-  #config.gem "grit",         :version => '0.7.0'
+# Require Rails libraries.
+require 'rubygems' unless File.directory?("#{RAILS_ROOT}/vendor/rails")
 
-  # Only load the plugins named here, in the order given. By default, all plugins 
-  # in vendor/plugins are loaded in alphabetical order.
-  # :all can be used as a placeholder for all plugins not explicitly named
-  # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
+# force Rails 0.13.1
+#require_gem 'activesupport',     '= 1.1.1'
+#require_gem 'activerecord',      '= 1.11.1'
+#require_gem 'actionpack',  '= 1.9.1'
+#require_gem 'actionmailer',      '= 1.0.1'
+#require_gem 'actionwebservice', '= 0.8.1'
 
-  # Add additional load paths for your own custom dirs
-  # config.load_paths += %W( #{RAILS_ROOT}/extras )
+require 'active_support'
+require 'active_record'
+require 'action_controller'
+require 'action_mailer'
+require 'action_web_service'
 
-  # Force all environments to use the same logger level
-  # (by default production uses :info, the others :debug)
-  # config.log_level = :debug
+# Environment-specific configuration.
+require_dependency 'migrator'
+require_dependency 'renderfix'
+require_dependency 'rails_patch/components'
+require_dependency 'theme'
+require_dependency 'login_system'
+require_dependency "environments/#{RAILS_ENV}"
+ActiveRecord::Base.configurations = File.open("#{RAILS_ROOT}/config/database.yml") { |f| YAML::load(f) }
+ActiveRecord::Base.establish_connection
 
-  # Make Time.zone default to the specified zone, and make Active Record store time values
-  # in the database in UTC, and return them converted to the specified local zone.
-  # Run "rake -D time" for a list of tasks for finding time zone names. Comment line to use default local time.
-  config.time_zone = 'Helsinki'
 
-  # The internationalization framework can be changed to have another default locale (standard is :en) or more load paths.
-  # All files from config/locales/*.rb,yml are added automatically.
-  # config.i18n.load_path << Dir[File.join(RAILS_ROOT, 'my', 'locales', '*.{rb,yml}')]
-  # config.i18n.default_locale = :de
-
-  # Your secret key for verifying cookie session data integrity.
-  # If you change this key, all old sessions will become invalid!
-  # Make sure the secret is at least 30 characters and all random, 
-  # no regular words or you'll be exposed to dictionary attacks.
-
-  # Use the database for sessions instead of the cookie-based default,
-  # which shouldn't be used to store highly confidential information
-  # (create the session table with "rake db:sessions:create")
-  config.action_controller.session_store = :active_record_store
-
-  # Use SQL instead of Active Record's schema dumper when creating the test database.
-  # This is necessary if your schema can't be completely dumped by the schema dumper,
-  # like if you have constraints or database-specific column types
-  # config.active_record.schema_format = :sql
-
-  # Activate observers that should always be running
-  # Please note that observers generated using script/generate observer need to have an _observer suffix
-  # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
-
-  # Activate observers that should always be running
-  config.active_record.observers = [
-      :user_observer
-  ]
-
-  config.after_initialize do
-    OAuth::Consumer.class_eval {
-      remove_const(:CA_FILE) if const_defined?(:CA_FILE)
-    }
-
-    OAuth::Consumer::CA_FILE = nil
-  end
-  
+# Configure defaults if the included environment did not.
+begin
+  RAILS_DEFAULT_LOGGER = Logger.new("#{RAILS_ROOT}/log/#{RAILS_ENV}.log")
+  RAILS_DEFAULT_LOGGER.level = (RAILS_ENV == 'production' ? Logger::INFO : Logger::DEBUG)
+rescue StandardError
+  RAILS_DEFAULT_LOGGER = Logger.new(STDERR)
+  RAILS_DEFAULT_LOGGER.level = Logger::WARN
+  RAILS_DEFAULT_LOGGER.warn(
+    "Rails Error: Unable to access log file. Please ensure that log/#{RAILS_ENV}.log exists and is chmod 0666. " +
+    "The log level has been raised to WARN and the output directed to STDERR until the problem is fixed."
+  )
 end
+
+[ActiveRecord, ActionController, ActionMailer].each { |mod| mod::Base.logger ||= RAILS_DEFAULT_LOGGER }
+[ActionController, ActionMailer].each { |mod| mod::Base.template_root ||= "#{RAILS_ROOT}/app/views/" }
+ActionController::Routing::Routes.reload
+
+Controllers = Dependencies::LoadingModule.root(
+  File.join(RAILS_ROOT, 'app', 'controllers'),
+  File.join(RAILS_ROOT, 'components')
+)
+
+# Include your app's configuration here:
+$KCODE = 'u'
+require_dependency 'jcode'
+require_dependency 'aggregations/audioscrobbler'
+require_dependency 'aggregations/delicious'
+require_dependency 'aggregations/tada'
+require_dependency 'aggregations/flickr'
+require_dependency 'aggregations/fortythree'
+require_dependency 'aggregations/upcoming'
+require_dependency 'config_manager' 
+require_dependency 'configuration'
+require_dependency 'spam_protection'
+require_dependency 'xmlrpc_fix'
+require_dependency 'guid'
+
+ActionController::CgiRequest::DEFAULT_SESSION_OPTIONS.update(:database_manager => CGI::Session::ActiveRecordStore)      
+ActionController::Base.fragment_cache_store = ActionController::Caching::Fragments::FileStore.new("#{RAILS_ROOT}/cache/fragment/")
+
+ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(
+  :long_weekday => '%a %B %e, %Y %H:%M'
+)
+
+ActionController::Base.enable_upload_progress
