@@ -19,7 +19,7 @@ source = Net::HTTP.get(uri)
 pages = ''
 
 
-x=1
+x=ARGV[0].to_i
 while num_links<=link_limit do
   
   links = []
