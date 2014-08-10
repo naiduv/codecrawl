@@ -1,5 +1,6 @@
 #codecrawl.rb crawls google for raw ruby code and uploads it to github
 require 'net/http'
+require 'Timeout'
 
 def push_to_git
   system 'git add --all'
@@ -44,6 +45,17 @@ while num_links<=link_limit do
   }
 
   links.each do |link|
+    code = ''
+    
+    begin
+      status = Timeout::timeout(5) {
+        code = Net::HTTP.get(URI(link))
+      }
+    rescue Timeout::Error
+      puts 'timeout on #{link}'
+      next
+    end
+
     code = Net::HTTP.get(URI(link))
     if code.include? '<html>'
       next
