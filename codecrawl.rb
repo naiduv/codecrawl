@@ -6,6 +6,7 @@ def push_to_git
   system 'git commit -a -m "found new ruby files"'
   system 'git pull origin master'
   system 'git push origin master'
+  sleep 60
 end
 
 link_limit= 80000
