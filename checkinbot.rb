@@ -16,11 +16,6 @@ $lengthmax = 10
 $letters = "abcdefghijklmnopqrstuvwxyz"
 $size = $letters.length;
 
-$letters = "abcdefghijklmnopqrstuvwxyz"
-$size = $letters.length;
-
-
-x=ARGV[0].to_i
 while true do
 	$f = File.new("newfile.txt",  "a")
 	$wordlength = rand($lengthmax);
@@ -30,8 +25,8 @@ while true do
 	 	$word[$newletters] = $letters[rand($size)]
 	 	$newletters = $newletters+1;
 	end
-	$f.write($word.to_s + " ")
-	
+	$f.puts($word.to_s + " ")
+	$f.close
 	push_to_git
 	sleep rand(36000);
 end
