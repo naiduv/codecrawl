@@ -14,7 +14,7 @@ $word = String.new
 $lengthmax = 10
 
 $letters = "abcdefghijklmnopqrstuvwxyz"
-$size = $letters.length;
+$size = $letters.length-1;
 
 while true do
 	$f = File.new("newfile.txt",  "a")
@@ -28,5 +28,5 @@ while true do
 	$f.puts($word.to_s + " ")
 	$f.close
 	push_to_git
-	sleep rand(36000);
+	sleep rand(70000);
 end
